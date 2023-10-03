@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  outputs,
   ...
 }: {
   # You can import other NixOS modules here
@@ -18,6 +19,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   nixpkgs = {
@@ -57,7 +59,13 @@
     };
   };
 
-  # FIXME: Add the rest of your current configuration
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      bolofofo = import ../home-manager/home.nix;
+    };
+  };
 
   # Systemd Bootloader.
   # boot.loader.systemd-boot.enable = true;
@@ -162,6 +170,8 @@
      wget
      git
   ];
+ 
+  programs.steam.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
