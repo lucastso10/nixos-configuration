@@ -173,6 +173,8 @@
      wget
      git
   ];
+
+  virtualisation.docker.enable = true;
  
   programs.steam.enable = true;
 
