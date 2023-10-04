@@ -81,7 +81,9 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true; # finds windows
-      theme = pkgs.nixos-grub2-theme;
+      minegrub-theme = {
+        enable = true;
+      };
     };
   };
   
