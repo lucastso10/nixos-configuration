@@ -31,7 +31,7 @@
         # > Our main nixos configuration file <
         modules = [
           ./nixos/configuration.nix
-          # ./nixos/nixos-pc-hardware-configuration.nix
+          ./nixos/nixos-pc-hardware-configuration.nix
           inputs.minegrub-theme.nixosModules.default
         ];
       };
