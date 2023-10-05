@@ -31,6 +31,16 @@
         # > Our main nixos configuration file <
         modules = [
           ./nixos/configuration.nix
+          # ./nixos/nixos-pc-hardware-configuration.nix
+          inputs.minegrub-theme.nixosModules.default
+        ];
+      };
+     nixos-laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/nixos-laptop-hardware-configuration.nix
           inputs.minegrub-theme.nixosModules.default
         ];
       };
