@@ -7,7 +7,25 @@
   pkgs,
   outputs,
   ...
-}: {
+}:
+  let
+
+  myFirefox = pkgs.wrapFirefox pkgs.firefox-esr-unwrapped {
+    nixExtensions = [
+      (pkgs.fetchFirefoxAddon {
+        name = "ublock"; # Has to be unique!
+        url = "https://addons.mozilla.org/firefox/downloads/file/3679754/ublock_origin-1.31.0-an+fx.xpi";
+        hash = "sha256-2e73AbmYZlZXCP5ptYVcFjQYdjDp4iPoEPEOSCVF5sA=";
+      })
+    ];
+
+    extraPolicies = {
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+    };
+  };
+
+  in {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -161,10 +179,6 @@
     isNormalUser = true;
     description = "bolofofo";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -174,11 +188,16 @@
      wget
      git
   ];
+ 
+  programs.firefox = {
+    enable = true;
+    package = myFirefox;
+  };
+   
 
   virtualisation.docker.enable = true;
  
   programs.steam.enable = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
