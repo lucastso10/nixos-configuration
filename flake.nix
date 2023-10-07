@@ -13,8 +13,6 @@
   outputs = {self, nixpkgs, home-manager, ... } @inputs: 
   let
     inherit (self) outputs;
-    inherit (nixpkgs) lib;    
-
 
     pkgs = import nixpkgs {
       config.allowUnfree = true;
@@ -23,14 +21,14 @@
 
   in {
     nixosConfigurations = {
-      punished = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/punished
-          ./nixos/configuration.nix
-        ];
-      };
+     punished = nixpkgs.lib.nixosSystem {
+       system = "x86_64-linux";
+       specialArgs = {inherit inputs outputs;};
+       modules = [
+         ./hosts/punished
+         ./nixos/configuration.nix
+       ];
+     };
      solid = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
