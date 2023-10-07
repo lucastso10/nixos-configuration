@@ -40,9 +40,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration 
-    # hardware config is now imported in the flake file
-    # ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -105,14 +102,10 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true; # finds windows
-      minegrub-theme = {
-        enable = true;
-      };
     };
   };
   
 
-  networking.hostName = "nixos-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -192,8 +185,8 @@
      vim 
      wget
      git
-     myFirefox
-       ];
+     firefox
+  ];
 
   virtualisation.docker.enable = true;
  
