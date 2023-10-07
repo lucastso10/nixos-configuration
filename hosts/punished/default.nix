@@ -6,14 +6,10 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
+    ./boot.nix
     ];
 
   networking.hostName = "punished";
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/8a98aca9-fd27-4219-b814-c1b070705735";

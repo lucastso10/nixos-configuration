@@ -88,20 +88,6 @@
   # Systemd Bootloader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
-  # Grub Bootloader.
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
-
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true; # finds windows
-    };
-  };
-  
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
