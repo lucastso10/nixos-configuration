@@ -182,15 +182,9 @@
      vim 
      wget
      git
-<<<<<<< HEAD
      firefox
   ];
-=======
-     myFirefox
-  ];
    
->>>>>>> fa3ebf4ecdddf976d9d9fbf942f361e5fd8cb8d8
-
   virtualisation.docker.enable = true;
  
   programs.steam.enable = true;
