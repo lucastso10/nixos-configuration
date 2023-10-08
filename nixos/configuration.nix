@@ -169,6 +169,7 @@
      wget
      git
      firefox
+     kitty
   ];
    
   virtualisation.docker.enable = true;
