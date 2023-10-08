@@ -22,18 +22,17 @@
   in {
     nixosConfigurations = {
      punished = nixpkgs.lib.nixosSystem {
-       system = "x86_64-linux";
-       specialArgs = {inherit inputs outputs;};
+       specialArgs = {inherit inputs outputs; hostname = "punished"; };
        modules = [
-         ./hosts/punished
+         ./systems
          ./nixos/configuration.nix
        ];
      };
      solid = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs; hostname = "solid"; };
         modules = [
-          #./nixos/configuration.nix
-          #./nixos/nixos-laptop-hardware-configuration.nix
+          ./systems
+          ./nixos/configuration.nix
         ];
       };
     };
