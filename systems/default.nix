@@ -1,4 +1,4 @@
-{config, lib, pkgs, specialArgs, ...}:
+{config, lib, pkgs, inputs, specialArgs, ...}:
 
 let
   hostname = specialArgs.hostname;
