@@ -9,7 +9,7 @@
       ./boot.nix
     ];
 
-  networking.hostname = "solid";
+  networking.hostName = "solid";
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a1527915-3dc2-4d8e-8ced-c898279d82e8";
