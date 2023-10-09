@@ -25,6 +25,7 @@
        specialArgs = {inherit inputs outputs; hostname = "punished"; };
        modules = [
          ./systems
+         ./pkgs
          ./nixos/configuration.nix
        ];
      };
