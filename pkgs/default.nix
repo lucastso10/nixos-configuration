@@ -4,10 +4,10 @@
   imports = if specialArgs.hostname == "punished" then
   [
     ./firefox.nix
-  ];
-  if else specialArgs.hostname == "solid" then
+  ]
+  else if specialArgs.hostname == "solid" then
   [
     ./firefox.nix
-  ];
-  else [];
+  ]
+  else [ ];
 }

@@ -13,12 +13,6 @@
   outputs = {self, nixpkgs, home-manager, ... } @inputs: 
   let
     inherit (self) outputs;
-
-    pkgs = import nixpkgs {
-      config.allowUnfree = true;
-      overlays = [];
-    };
-
   in {
     nixosConfigurations = {
      punished = nixpkgs.lib.nixosSystem {
