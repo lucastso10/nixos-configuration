@@ -9,6 +9,7 @@
   else if specialArgs.hostname == "solid" then
   [
     ./firefox.nix
+    ./vim.nix
   ]
   else [ ];
 }

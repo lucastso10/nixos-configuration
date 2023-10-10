@@ -27,6 +27,7 @@
         specialArgs = {inherit inputs outputs; hostname = "solid"; };
         modules = [
           ./systems
+          ./pkgs
           ./nixos/configuration.nix
         ];
       };
