@@ -1,17 +1,23 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, inputs, ...}:
 
 {
-  programs.neovim = {
-    viAlias = true;
+  imports = [ inputs.nixvim.nixosModules.nixvim ];
+
+  programs.nixvim = {
+    enable = true;
     vimAlias = true;
 
-    enable = true;
-    defaultEditor = true;
-    
-    configure = {
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ vim-nix ];
-      };
+    options = {
+      number = true;
+      shiftwidth = 2;
     };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-nix
+    ];
+
+    colorschemes.tokyonight.enable = true;
+    
+    plugins.lightline.enable = true;
   };
 }

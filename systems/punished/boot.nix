@@ -19,6 +19,7 @@
         enable = true;
         devices = [ "nodev" ];
         efiSupport = true;
+        useOSProber = true;
         theme = pkgs.nixos-grub2-theme;
       };
 
