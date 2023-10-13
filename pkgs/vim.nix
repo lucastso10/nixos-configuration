@@ -14,11 +14,15 @@
 
 
     colorschemes.tokyonight.enable = true;
-    
-    plugins.lightline.enable = true;
-    plugins.nix.enable = true;
-    plugins.treesitter.enable = true;
-    plugins.treesitter-context.enable = true;
-    plugins.trouble.enable = true;
+
+    plugins = {
+      nix.enable = true;
+      lightline.enable = true;
+      treesitter.enable = true;
+      treesitter-context.enable = true;
+      trouble.enable = true;
+      nvim-cmp.enable = true;
+      neo-tree.enable = true;
+    };
   };
 }
