@@ -67,6 +67,8 @@
      wget
      git
      kitty
+     gh
+     ardour
   ];
    
   virtualisation.docker.enable = true;

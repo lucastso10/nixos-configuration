@@ -8,16 +8,18 @@
     vimAlias = true;
 
     options = {
-      number = true;
+      relativenumber = true;
       shiftwidth = 2;
     };
 
-    extraPlugins = with pkgs.vimPlugins; [
-      vim-nix
-    ];
 
     colorschemes.tokyonight.enable = true;
     
     plugins.lightline.enable = true;
+    plugins.nix.enable = true;
+    plugins.treesitter.enable = true;
+    plugins.treesitter-context.enable = true;
+    plugins.trouble.enable = true;
+    plugins.cmp-git.enable = true;
   };
 }
