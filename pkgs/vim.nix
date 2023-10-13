@@ -20,6 +20,5 @@
     plugins.treesitter.enable = true;
     plugins.treesitter-context.enable = true;
     plugins.trouble.enable = true;
-    plugins.cmp-git.enable = true;
   };
 }
