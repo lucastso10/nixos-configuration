@@ -24,5 +24,9 @@
       nvim-cmp.enable = true;
       neo-tree.enable = true;
     };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-be-good
+    ];
   };
 }
