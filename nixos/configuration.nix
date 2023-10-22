@@ -69,6 +69,8 @@
      kitty
      gh
      ardour
+     chromium
+     libreoffice
   ];
    
   virtualisation.docker.enable = true;
