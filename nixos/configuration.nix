@@ -70,7 +70,8 @@
      alacritty
      gh
      ardour
-     gh
+     chromium
+     libreoffice
   ];
    
   virtualisation.docker.enable = true;
