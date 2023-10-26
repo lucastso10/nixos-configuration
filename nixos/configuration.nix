@@ -67,6 +67,7 @@
      wget
      git
      kitty
+     alacritty
      gh
      ardour
   ];
