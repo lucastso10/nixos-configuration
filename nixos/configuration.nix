@@ -70,6 +70,7 @@
      alacritty
      gh
      ardour
+     gh
   ];
    
   virtualisation.docker.enable = true;
