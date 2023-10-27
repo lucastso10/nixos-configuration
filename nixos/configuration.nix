@@ -72,6 +72,7 @@
      ardour
      chromium
      libreoffice
+     blackbox-terminal
   ];
    
   virtualisation.docker.enable = true;
