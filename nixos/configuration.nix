@@ -67,15 +67,7 @@
      wget
      git
      kitty
-     alacritty
-     gh
-     ardour
-     chromium
-     libreoffice
-     blackbox-terminal
   ];
-   
-  virtualisation.docker.enable = true;
  
   programs.steam.enable = true;
   # Some programs need SUID wrappers, can be configured further or are

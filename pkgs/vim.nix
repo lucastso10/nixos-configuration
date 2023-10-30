@@ -4,7 +4,7 @@
   imports = [ inputs.nixvim.nixosModules.nixvim ];
 
   options = {
-    vim = {
+    programs.vim = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
@@ -15,7 +15,7 @@
     };
   };
 
-  config = lib.mkIf config.vim.enable {
+  config = lib.mkIf config.programs.vim.enable {
     programs.nixvim = {
       enable = true;
       vimAlias = true;
