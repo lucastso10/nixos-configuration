@@ -22,7 +22,7 @@
        specialArgs = {inherit inputs outputs; hostname = "punished"; };
        modules = [
          ./systems
-         ./pkgs
+         ./apps
          ./nixos/configuration.nix
        ];
      };
@@ -30,7 +30,7 @@
         specialArgs = {inherit inputs outputs; hostname = "solid"; };
         modules = [
           ./systems
-          ./pkgs
+          ./apps
           ./nixos/configuration.nix
         ];
       };
