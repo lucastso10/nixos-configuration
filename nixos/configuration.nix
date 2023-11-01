@@ -66,7 +66,6 @@
   environment.systemPackages = with pkgs; [
      wget
      git
-     kitty
   ];
  
   programs.steam.enable = true;

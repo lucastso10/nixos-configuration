@@ -5,6 +5,8 @@ with lib;
   imports = [ ./hardware.nix ];
 
   config = {
-    programs.vim.enable = true;
+    apps.vim.enable = true;
+    apps.firefox.enable = true;
+    apps.kitty.enable = true;
   };
 }
