@@ -2,7 +2,10 @@
 
 with lib;
 {
-  imports = [ ./hardware.nix ];
+  imports = [ 
+  ./hardware.nix
+  ./boot.nix
+  ];
 
   config = {
     apps.vim.enable = true;

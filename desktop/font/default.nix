@@ -28,7 +28,7 @@
 
       fontconfig = {
         defaultFonts = {
-          monospace = [ "Hack" ];
+          monospace = [ config.desktop.nerdfont.font ];
         };
       };
     };
