@@ -1,0 +1,8 @@
+{...}:
+{
+  imports = [
+    ./shell
+    ./font
+    #./gnome
+  ];
+}

@@ -31,6 +31,7 @@
         modules = [
           ./systems
           ./apps
+          ./desktop
           ./nixos/configuration.nix
         ];
       };
