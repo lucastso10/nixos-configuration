@@ -34,7 +34,13 @@
         treesitter.enable = true;
         treesitter-context.enable = true;
         trouble.enable = true;
-        nvim-cmp.enable = true;
+
+        cmp-treesitter.enable = true;
+        lsp.enable = true;
+        nvim-cmp = {
+          enable = true;
+          autoEnableSources = true;
+        };
         neo-tree.enable = true;
       };
 
