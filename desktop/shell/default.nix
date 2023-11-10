@@ -21,7 +21,7 @@
         enable = true;
         enableBashIntegration = true;
         settings = {
-          format = "[](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$docker_context[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)";
+          format = "[](#9A348E)[ ](bg:#9A348E)$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#06969A)$nix_shell$docker_context[](fg:#06969A bg:#33658A)$time[ ](fg:#33658A)";
 
           os = {
             style = "bg:#9A348E";
@@ -59,6 +59,15 @@
             style = "bg:#06969A";
             format = "[ $symbol $context ]($style) $path";
           };
+
+          
+          nix_shell = { 
+            disabled = false;
+            symbol = " ";
+            style = "bg:#06969A";
+            format = "[ $symbol$name ]($style)";
+          };
+
 
           time = {
             disabled = false;

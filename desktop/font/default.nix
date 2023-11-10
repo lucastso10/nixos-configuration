@@ -17,18 +17,26 @@
           the nerdfont to download
         '';
       };
+
+      size = mkOption {
+        type = types.int;
+        default = 12;
+        description = ''
+          use this size to any app that allows it
+        '';
+      };
     };
   };
 
   config = lib.mkIf config.desktop.nerdfont.enable {
     fonts = {
       packages = with pkgs; [
-        (nerdfonts.override { fonts = [ config.desktop.nerdfont.font ]; })
+        (nerdfonts.override { fonts = [ config.desktop.nerdfont.font  "NerdFontsSymbolsOnly" ]; })
       ];
 
       fontconfig = {
         defaultFonts = {
-          monospace = [ config.desktop.nerdfont.font ];
+          monospace = [ "NerdFontsSymbolsOnly" config.desktop.nerdfont.font ];
         };
       };
     };

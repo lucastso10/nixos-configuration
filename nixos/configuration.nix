@@ -66,6 +66,8 @@
   environment.systemPackages = with pkgs; [
      wget
      libreoffice
+     webcord
+     youtube-music
   ];
  
   programs.steam.enable = true;
