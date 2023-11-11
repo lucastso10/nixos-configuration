@@ -20,7 +20,7 @@
 
       size = mkOption {
         type = types.int;
-        default = 12;
+        default = 13;
         description = ''
           use this size to any app that allows it
         '';
