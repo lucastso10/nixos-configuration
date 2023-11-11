@@ -27,6 +27,7 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
 
+  # amd gpu shit
   environment.systemPackages = with pkgs; [
     rocmPackages.rocmlir
     rocmPackages.rocminfo

@@ -68,9 +68,6 @@
      libreoffice
      webcord
      youtube-music
-     lutris
-     wine
-     winetricks
   ];
  
   programs.steam.enable = true;

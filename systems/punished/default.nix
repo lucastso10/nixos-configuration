@@ -11,6 +11,6 @@ with lib;
     apps.vim.enable = true;
     apps.firefox.enable = true;
     apps.kitty.enable = true;
-    apps.ollama.enable = false;
+    apps.lutris.enable = true;
   };
 }
