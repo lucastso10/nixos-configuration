@@ -68,6 +68,8 @@
      libreoffice
      webcord
      youtube-music
+     python3
+     steamPackages.steamcmd
   ];
  
   programs.steam.enable = true;

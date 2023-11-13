@@ -14,6 +14,12 @@ let
         url = "https://addons.mozilla.org/firefox/downloads/file/3620954/purple_night_theme-1.0.xpi";
         hash = "sha256-7PE3aXM7gOqleS0iYzrGRb/z7XtQpThrnH3eusTYXEk=";
       })
+
+      (fetchFirefoxAddon {
+        name = "bttv";
+        url = "https://addons.mozilla.org/firefox/downloads/file/3620954/purple_night_theme-1.0.xpi";
+        hash = "sha256-7PE3aXM7gOqleS0iYzrGRb/z7XtQpThrnH3eusTYXEk=";
+      })
     ];
 
      extraPolicies = {

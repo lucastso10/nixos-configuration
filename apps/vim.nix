@@ -27,8 +27,29 @@
         shiftwidth = 2;
       };
 
-
       colorschemes.tokyonight.enable = true;
+
+      keymaps = [
+        # nvim-tree keymaps
+        {
+          mode = "n";
+          key = "<C-n>";
+          action = "<cmd>:NvimTreeToggle<cr>";
+          options = {
+            silent = true;
+            desc = "Toggle Tree";
+          };
+        }
+        {
+          mode = "n";
+          key = "<A-f>";
+          action = "<cmd>:NvimTreeFindFile<cr>";
+          options = {
+            silent = true;
+            desc = "CurrentFile";
+          };
+        }
+      ];
 
       plugins = {
         # highlighting stuff
@@ -73,13 +94,25 @@
           ];
 
           mapping = {
-            "<Tab>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
-            "<C-Space>" = "cmp.mapping.scroll_docs(1)";
+            "<CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+            "<C-j>" = "cmp.mapping.select_next_item()";
           };
         };
 
         # browse through files
-        neo-tree.enable = true;
+        nvim-tree = {
+          enable = true;
+          hijackCursor = true;
+
+          filters = {
+            custom = [ "^.git$" ];
+          };
+
+          git = {
+            enable = true;
+            
+          };
+        };
 
         # bottom bar
         airline = {
@@ -92,14 +125,19 @@
         nvim-colorizer.enable = true;
 
         # tabs
-        #bufferline = {
-          #enable = true;
-          #alwaysShowBufferline = true;
-          #highlights.indicatorSelected.sp = "#8aadf4";
-          #indicator.style = "underline";
-          #diagnostics = "nvim_lsp";
-          #hover.enabled = true;
-        #};
+        barbar = { 
+          enable = true;
+          autoHide = true;
+          keymaps = {
+            close = "<C-q>";
+            next = "<C-.>";
+            previous = "<C-,>";
+            moveNext = "<C-A-.>";
+            movePrevious = "<C-A-,>";
+          };
+
+          sidebarFiletypes = "NvimTree";
+        };
       };
     };
   };
