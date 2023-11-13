@@ -135,8 +135,6 @@
             moveNext = "<C-A-.>";
             movePrevious = "<C-A-,>";
           };
-
-          sidebarFiletypes = "NvimTree";
         };
       };
     };
