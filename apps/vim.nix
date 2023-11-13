@@ -49,6 +49,16 @@
             desc = "CurrentFile";
           };
         }
+        # undotree keymaps
+        {
+          mode = "n";
+          key = "<A-F3>";
+          action = "<cmd>:UndotreeToggle<cr>";
+          options = {
+            silent = true;
+            desc = "Toggle undotree";
+          };
+        }
       ];
 
       plugins = {
@@ -135,6 +145,15 @@
             moveNext = "<C-A-.>";
             movePrevious = "<C-A-,>";
           };
+        };
+
+        # initial screen
+        dashboard.enable = true;
+
+        # undo
+        undotree = { 
+          enable = true;
+          autoOpenDiff = false;
         };
       };
     };
