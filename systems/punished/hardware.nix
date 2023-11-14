@@ -6,8 +6,6 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  networking.hostName = "punished";
-
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9d938325-c8b3-4d07-a26c-5dd65a72d55b";
       fsType = "ext4";
@@ -27,15 +25,7 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
 
-  # amd gpu shit
-  environment.systemPackages = with pkgs; [
-    rocmPackages.rocmlir
-    rocmPackages.rocminfo
-    rocmPackages.rocm-core
-    rocmPackages.rocm-runtime
-    rocm-opencl-icd
-    rocm-opencl-runtime
-  ];
+  networking.firewall.enable = false;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";

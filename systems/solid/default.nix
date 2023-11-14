@@ -8,6 +8,8 @@ with lib;
   ];
 
   config = {
+    networking.hostName = "solid";
+
     apps.vim.enable = true;
     apps.firefox.enable = true;
     apps.kitty.enable = true;

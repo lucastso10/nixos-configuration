@@ -8,6 +8,8 @@ with lib;
   ];
 
   config = {
+    networking.hostName = "punished";
+
     apps.vim.enable = true;
     apps.firefox.enable = true;
     apps.kitty.enable = true;
