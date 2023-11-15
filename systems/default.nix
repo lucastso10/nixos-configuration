@@ -5,6 +5,7 @@ let
 in{
   imports = [ 
     ./${hostname} 
+    ./default_config.nix
   ];
 
   # default settings for all systems goes here

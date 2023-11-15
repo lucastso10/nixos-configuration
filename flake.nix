@@ -21,6 +21,7 @@
      punished = nixpkgs.lib.nixosSystem {
        specialArgs = {inherit inputs outputs; hostname = "punished"; };
        modules = [
+         home-manager.nixosModules.home-manager
          ./systems
          ./apps
          ./desktop
