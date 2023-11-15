@@ -18,6 +18,7 @@
   config = lib.mkIf config.apps.vim.enable {
     programs.nixvim = {
       enable = true;
+      viAlias = true;
       vimAlias = true;
 
       clipboard.providers.wl-copy.enable = true; # only true for wayland systems, may want to alter this later

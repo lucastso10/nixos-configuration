@@ -9,15 +9,55 @@
   ...
 }:
 {
-  # You can import other NixOS modules here
-  imports = [
-    inputs.home-manager.nixosModules.home-manager # TODO: move homanager somewhere else
-  ];
+  # default settings for all systems goes here  
+  nixpkgs.config.allowUnfree = true;
+  
+  nix = {
+    # This will add each flake input as a registry
+    # To make nix3 commands consistent with your flake
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
+    # This will additionally add your inputs to the system's legacy channels
+    # Making legacy nix commands consistent as well, awesome!
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = "nix-command flakes";
+      # Deduplicate and optimize nix store
+      auto-optimise-store = true;
+    };
+  };
+
+  # Set your time zone.
+  time.timeZone = "America/Sao_Paulo";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "pt_BR.UTF-8";
+    LC_IDENTIFICATION = "pt_BR.UTF-8";
+    LC_MEASUREMENT = "pt_BR.UTF-8";
+    LC_MONETARY = "pt_BR.UTF-8";
+    LC_NAME = "pt_BR.UTF-8";
+    LC_NUMERIC = "pt_BR.UTF-8";
+    LC_PAPER = "pt_BR.UTF-8";
+    LC_TELEPHONE = "pt_BR.UTF-8";
+    LC_TIME = "pt_BR.UTF-8";
+  };
+
+  users.users.bolofofo = {
+    isNormalUser = true;
+    description = "bolofofo";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+ 
+  # Enable networking
+  networking.networkmanager.enable = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
-      # Import your home-manager configuration
       bolofofo = import ../home-manager/home.nix;
     };
   };
@@ -35,12 +75,6 @@
     xkbVariant = "";
   };
 
-  # Configure console keymap
-  console.keyMap = "br-abnt2";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -50,44 +84,29 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
+  # TODO: Maybe do a laptop config to activate stuff like this just for it.
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
      wget
      libreoffice
      webcord
      youtube-music
      python3
-     android-studio
   ];
  
   programs.steam.enable = true;
 
+  # TODO: Move this somewhere else
   virtualisation.docker.enable = true;
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # TODO: move this to individual systems
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

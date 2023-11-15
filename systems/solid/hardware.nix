@@ -6,8 +6,6 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  networking.hostName = "solid";
-
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a1527915-3dc2-4d8e-8ced-c898279d82e8";
       fsType = "ext4";

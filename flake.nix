@@ -16,25 +16,23 @@
   outputs = {self, nixpkgs, home-manager, ... } @inputs: 
   let
     inherit (self) outputs;
+
+    directories = [
+      home-manager.nixosModules.home-manager
+      ./systems
+      ./apps
+      ./desktop
+    ];
+
   in {
     nixosConfigurations = {
      punished = nixpkgs.lib.nixosSystem {
        specialArgs = {inherit inputs outputs; hostname = "punished"; };
-       modules = [
-         ./systems
-         ./apps
-         ./desktop
-         ./nixos/configuration.nix
-       ];
+       modules = directories;
      };
      solid = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs; hostname = "solid"; };
-        modules = [
-          ./systems
-          ./apps
-          ./desktop
-          ./nixos/configuration.nix
-        ];
+        modules = directories;
       };
     };
   };
