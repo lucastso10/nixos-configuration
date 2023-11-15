@@ -69,7 +69,7 @@
      webcord
      youtube-music
      python3
-     steamPackages.steamcmd
+     android-studio
   ];
  
   programs.steam.enable = true;
