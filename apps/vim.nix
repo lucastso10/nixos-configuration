@@ -116,12 +116,13 @@
           hijackCursor = true;
 
           filters = {
+            dotfiles = true; # ignores files with .
             custom = [ "^.git$" ];
           };
 
           git = {
             enable = true;
-            
+            ignore = true; # makes tree ignore files on gitignore
           };
         };
 
