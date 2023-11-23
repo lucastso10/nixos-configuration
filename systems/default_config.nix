@@ -50,7 +50,7 @@
   users.users.bolofofo = {
     isNormalUser = true;
     description = "bolofofo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
   };
  
   # Enable networking
@@ -96,6 +96,8 @@
      webcord
      youtube-music
      python3
+     grapejuice
+     git-lfs
   ];
  
   programs.steam.enable = true;

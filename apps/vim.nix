@@ -85,13 +85,14 @@
         cmp-nvim-lsp.enable = true;
         cmp-buffer.enable = true;
 
-        luasnip.enable = true;
+        cmp-nvim-ultisnips.enable = true;
         nvim-cmp = {
           enable = true;
+          completion.keywordLength = 2;
+          snippet.expand = "ultisnips";
           sources = [
             {
-              name = "luasnip";
-              option.show_autosnippets = true;
+              name = "ultisnips";
               priority = 3;
             }
             {
