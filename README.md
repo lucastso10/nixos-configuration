@@ -2,7 +2,7 @@
 
 this is my personal config files for the nixos operating system. 
 
-Work in pogress.
+Work in progress.
 
 # What is nix/nixos?
 
