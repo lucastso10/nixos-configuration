@@ -6,4 +6,4 @@ Work in pogress.
 
 # What is nix/nixos?
 
-More information on nix/nixos can be found on their (site)[https://nixos.org/].
+More information on nix/nixos can be found on their [site](https://nixos.org/).
