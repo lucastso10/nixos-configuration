@@ -55,6 +55,8 @@
  
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
@@ -62,6 +64,7 @@
     };
   };
 
+  # TODO: X11 stuff needs to move
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -75,6 +78,7 @@
     xkbVariant = "";
   };
 
+  # TODO: Toggle for ALSA when needed
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -90,6 +94,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   
+  # TODO: every one of these needs to go in apps
   environment.systemPackages = with pkgs; [
      wget
      libreoffice
@@ -99,12 +104,12 @@
      grapejuice
      git-lfs
   ];
- 
   programs.steam.enable = true;
 
   # TODO: Move this somewhere else
   virtualisation.docker.enable = true;
 
+  # MAYBE: openSSH could be useful
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 

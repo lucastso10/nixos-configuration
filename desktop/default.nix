@@ -3,6 +3,6 @@
   imports = [
     ./shell
     ./font
-    #./gnome
+    #./desktop-enviroments
   ];
 }
