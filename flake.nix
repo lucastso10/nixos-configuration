@@ -27,11 +27,11 @@
   in {
     nixosConfigurations = {
      punished = nixpkgs.lib.nixosSystem {
-       specialArgs = {inherit inputs outputs; hostname = "punished"; };
+       specialArgs = {inherit inputs outputs;};
        modules = directories;
      };
      solid = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs; hostname = "solid"; };
+        specialArgs = {inherit inputs outputs;};
         modules = directories;
       };
     };

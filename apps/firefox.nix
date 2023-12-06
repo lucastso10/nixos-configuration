@@ -5,7 +5,7 @@
     apps.firefox = {
       enable = mkOption {
         type = types.bool;
-        default = false;
+        default = true;
         description = ''
           wheter or not to enable firefox
         '';
