@@ -15,6 +15,7 @@
 
   config = lib.mkIf config.apps.firefox.enable {
     home-manager.users."bolofofo" = {pkgs, ...}:{
+      # TODO: find a way to get extensions
       programs.firefox = {
         enable = true;
         # gnomeExtesion = config.gnome.enable;
