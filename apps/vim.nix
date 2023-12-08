@@ -1,5 +1,6 @@
 { config, lib, pkgs, inputs, ...}:
 
+# TODO: move neovim to seperate flake so I can use it anywhere I want
 {
   imports = [ inputs.nixvim.nixosModules.nixvim ];
 
