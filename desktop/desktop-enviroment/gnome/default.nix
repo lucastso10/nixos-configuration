@@ -6,7 +6,7 @@
       type = types.bool;
       default = true;
       description = ''
-        wheter or not to enable nerdfonts on the system
+        wheter or not to use gnome as the desktop enviroment
       '';
     };
   };

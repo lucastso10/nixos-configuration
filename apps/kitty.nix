@@ -15,7 +15,7 @@
 
   config = lib.mkIf config.apps.kitty.enable {
     
-    home-manager.users."bolofofo" = { pkgs, ... }:{
+    home-manager.users."bolofofo" = {
       programs.kitty = {
         enable = true;
         theme = "Alucard";

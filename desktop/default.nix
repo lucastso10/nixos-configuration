@@ -3,6 +3,6 @@
   imports = [
     ./shell
     ./font
-    ./desktop-managers
+    ./desktop-enviroment
   ];
 }
