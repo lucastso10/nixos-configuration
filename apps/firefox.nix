@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...}:
+{config, lib, pkgs, home-manager, ...}:
 
 {
   options = with lib; {
@@ -14,7 +14,7 @@
   };
 
   config = lib.mkIf config.apps.firefox.enable {
-    home-manager.users."bolofofo" = {pkgs, ...}:{
+    home-manager.users."bolofofo" = {
       # TODO: find a way to get extensions
       programs.firefox = {
         enable = true;
