@@ -51,7 +51,7 @@
     
           git_status = { 
             style = "bg:#FCA17D";
-            format = "[$all_status $ahead_behind ]($style)";
+            format = "[$all_status$ahead_behind ]($style)";
           };
 
           docker_context = {
