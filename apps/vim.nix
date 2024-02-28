@@ -68,7 +68,7 @@
         nix.enable = true;
         treesitter.enable = true;
 
-        # trying to do autocomplete NOT WORKING
+        # trying to do autocomplete kind of works, but gives error sometimes
         lsp = {
           enable = true;
           servers = {

@@ -12,10 +12,13 @@
     console.keyMap = "br-abnt2";
 
     desktop.gnome.enable = true;
+    desktop.hyprland.enable = true;
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
     apps.kitty.enable = true;
     apps.roblox.enable = false;
+
+    networking.firewall.enable = false;
   };
 }
