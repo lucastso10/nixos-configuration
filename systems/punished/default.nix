@@ -1,11 +1,7 @@
-{pkgs, lib, config, ...}:
+{ pkgs, lib, config, ... }:
 
-with lib;
-{
-  imports = [ 
-  ./hardware.nix
-  ./boot.nix
-  ];
+with lib; {
+  imports = [ ./hardware.nix ./boot.nix ];
 
   config = {
     networking.hostName = "punished";

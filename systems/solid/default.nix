@@ -1,9 +1,5 @@
-{pkgs, lib, config, ...}:
-{
-  imports = [ 
-  ./hardware.nix
-  ./boot.nix
-  ];
+{ pkgs, lib, config, ... }: {
+  imports = [ ./hardware.nix ./boot.nix ];
 
   config = {
     networking.hostName = "solid";

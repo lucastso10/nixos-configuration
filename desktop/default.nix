@@ -1,8 +1,1 @@
-{...}:
-{
-  imports = [
-    ./shell
-    ./font
-    ./desktop-enviroment
-  ];
-}
+{ ... }: { imports = [ ./shell ./font ./desktop-enviroment ]; }

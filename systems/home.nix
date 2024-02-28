@@ -1,5 +1,4 @@
-{ lib, config, pkgs, ... }: 
-{
+{ lib, config, pkgs, ... }: {
   home = {
     username = "bolofofo";
     homeDirectory = "/home/bolofofo";
@@ -8,7 +7,7 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userName  = "lucastso10";
+    userName = "lucastso10";
     userEmail = "lucastso10@gmail.com";
   };
   # Nicely reload system units when changing configs

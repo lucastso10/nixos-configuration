@@ -1,25 +1,18 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  outputs,
-  ...
-}:
-{
+{ inputs, lib, config, pkgs, outputs, ... }: {
   # default settings for all systems goes here  
   nixpkgs.config.allowUnfree = true;
-  
+
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
+      config.nix.registry;
 
     settings = {
       # Enable flakes and new 'nix' command
@@ -52,16 +45,14 @@
     description = "bolofofo";
     extraGroups = [ "networkmanager" "wheel" "plugdev" ];
   };
- 
+
   # Enable networking
   networking.networkmanager.enable = true;
 
   # home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      bolofofo = import ./home.nix;
-    };
+    users = { bolofofo = import ./home.nix; };
   };
 
   # TODO: Toggle for ALSA when needed
@@ -79,16 +70,16 @@
   # TODO: Maybe do a laptop config to activate stuff like this just for it.
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   # TODO: every one of these needs to go in apps
   environment.systemPackages = with pkgs; [
-     wget
-     libreoffice
-     webcord
-     youtube-music
-     python3
-     grapejuice
-     git-lfs
+    wget
+    libreoffice
+    webcord
+    youtube-music
+    python3
+    grapejuice
+    git-lfs
   ];
   programs.steam.enable = true;
 
@@ -105,7 +96,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

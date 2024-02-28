@@ -12,34 +12,33 @@
     # nixvim for configuring neovim with nix
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
-    # hyprland desktop enviroment
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, home-manager, hyprland, ... } @inputs: 
-  let
-    inherit (self) outputs;
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      inherit (self) outputs;
 
-    directories = [
-      hyprland.nixosModules.default
-      home-manager.nixosModules.home-manager
-      ./systems
-      ./apps
-      ./desktop
-    ];
+      directories =
+        [ home-manager.nixosModules.home-manager ./systems ./apps ./desktop ];
 
-  in {
-    nixosConfigurations = {
-     punished = nixpkgs.lib.nixosSystem {
-       specialArgs = {inherit inputs outputs; hostname = "punished";};
-       modules = directories;
-     };
-     solid = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs; hostname = "solid";};
-        modules = directories;
+    in {
+      nixosConfigurations = {
+        punished = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            hostname = "punished";
+          };
+          modules = directories;
+        };
+        solid = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            hostname = "solid";
+          };
+          modules = directories;
+        };
       };
+
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
     };
-  };
 }

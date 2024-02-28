@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ...}:
+{ config, lib, pkgs, inputs, ... }:
 
 # TODO: move neovim to seperate flake so I can use it anywhere I want
 {
@@ -8,7 +8,7 @@
     apps.vim = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = false; 
+        default = false;
         description = ''
           whether or not to enable vim
         '';
@@ -22,7 +22,8 @@
       viAlias = true;
       vimAlias = true;
 
-      clipboard.providers.wl-copy.enable = true; # only true for wayland systems, may want to alter this later
+      clipboard.providers.wl-copy.enable =
+        true; # only true for wayland systems, may want to alter this later
 
       options = {
         relativenumber = true;
@@ -107,7 +108,8 @@
           ];
 
           mapping = {
-            "<CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+            "<CR>" =
+              "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
             "<C-j>" = "cmp.mapping.select_next_item()";
           };
         };
@@ -132,14 +134,14 @@
         airline = {
           enable = true;
           powerline = true;
-          theme = "solarized"; 
+          theme = "solarized";
         };
 
         # color to hex values
         nvim-colorizer.enable = true;
 
         # tabs
-        barbar = { 
+        barbar = {
           enable = true;
           autoHide = true;
           keymaps = {
@@ -155,7 +157,7 @@
         dashboard.enable = true;
 
         # undo
-        undotree = { 
+        undotree = {
           enable = true;
           autoOpenDiff = false;
         };

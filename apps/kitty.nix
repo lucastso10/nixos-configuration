@@ -1,4 +1,4 @@
-{lib, config, pkgs, home-manager, ...}:
+{ lib, config, pkgs, home-manager, ... }:
 
 {
   options = with lib; {
@@ -9,12 +9,12 @@
         description = ''
           wheter or not to enable the kitty terminal emulator
         '';
-      };  
+      };
     };
   };
 
   config = lib.mkIf config.apps.kitty.enable {
-    
+
     home-manager.users."bolofofo" = {
       programs.kitty = {
         enable = true;
@@ -26,6 +26,6 @@
         };
       };
     };
-    
+
   };
 }

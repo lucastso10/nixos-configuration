@@ -1,7 +1,7 @@
-{ lib, config, pkgs, outputs, ...}:
+{ lib, config, pkgs, outputs, ... }:
 
 {
-  options = with lib; { 
+  options = with lib; {
     desktop.gnome.enable = mkOption {
       type = types.bool;
       default = true;
