@@ -1,11 +1,21 @@
 { lib, config, pkgs, home-manager, ... }: {
   options = with lib; {
-    desktop.hyprland.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = ''
-        wheter or not to use hyprland as the desktop enviroment
-      '';
+    desktop.hyprland = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = ''
+          wheter or not to use hyprland as the desktop enviroment
+        '';
+      };
+
+      modKey = mkOption {
+        type = types.str;
+        default = "ALT";
+        description = ''
+          alters the mod key used in hyprland
+        '';
+      };
     };
   };
 
@@ -19,7 +29,7 @@
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
-      "$mod" = "ALT";
+      "$mod" = config.desktop.hyprland.modKey;
 
       decoration = {
         shadow_offset = "0 5";

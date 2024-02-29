@@ -133,7 +133,7 @@
         # bottom bar
         airline = {
           enable = true;
-          powerline = true;
+          # powerline = true;
           theme = "solarized";
         };
 
@@ -159,7 +159,7 @@
         # undo
         undotree = {
           enable = true;
-          autoOpenDiff = false;
+          AutoOpenDiff = false;
         };
       };
     };
