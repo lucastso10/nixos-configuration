@@ -22,8 +22,8 @@
       viAlias = true;
       vimAlias = true;
 
-      clipboard.providers.wl-copy.enable =
-        true; # only true for wayland systems, may want to alter this later
+      # only true for wayland systems, may want to alter this later
+      clipboard.providers.wl-copy.enable = true;
 
       options = {
         relativenumber = true;
@@ -159,7 +159,7 @@
         # undo
         undotree = {
           enable = true;
-          AutoOpenDiff = false;
+          #AutoOpenDiff = false;
         };
       };
     };
