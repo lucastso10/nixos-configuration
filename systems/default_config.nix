@@ -1,7 +1,4 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 { inputs, lib, config, pkgs, outputs, ... }: {
-  # default settings for all systems goes here  
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -67,10 +64,6 @@
     pulse.enable = true;
   };
 
-  # TODO: Maybe do a laptop config to activate stuff like this just for it.
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # TODO: every one of these needs to go in apps
   environment.systemPackages = with pkgs; [
     wget
@@ -89,13 +82,6 @@
   # MAYBE: openSSH could be useful
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # TODO: move this to individual systems
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

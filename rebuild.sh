@@ -1,9 +1,11 @@
 #!/bin/sh
 pushd ~/nixos-config
 
+echo "Formatting..."
+
 nix fmt
 
-git diff -U0 *.nix
+git diff
 
 echo "NixOS Rebuilding..."
 

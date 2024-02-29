@@ -31,12 +31,14 @@
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
 
-      decoration = {
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000099)";
-      };
+      #decoration = {
+      #  shadow_offset = "0 5";
+      #  "col.shadow" = "rgba(00000099)";
+      #};
 
-      bindm = [
+      input = { kb_layout = "br"; };
+
+      bind = [
         #mouse movements    
         "$mod, ENTER, exec, kitty"
 
