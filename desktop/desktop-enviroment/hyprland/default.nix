@@ -31,17 +31,19 @@
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
 
-      #decoration = {
-      #  shadow_offset = "0 5";
-      #  "col.shadow" = "rgba(00000099)";
-      #};
+      decoration = {
+        # shadow stuff
+        drop_shadow = true;
+        shadow_offset = "5 5";
+        "col.shadow" = "rgba(00000099)";
+      };
 
       input = { kb_layout = "br"; };
 
       bind = [
         "$mod, F, exec, firefox"
-        "$mod, Q, exec, kitty"
-        ", Print, exec, grimblast copy area"
+        "$mod, RETURN, exec, kitty"
+        "$mod, Q, killactive"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
