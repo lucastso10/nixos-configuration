@@ -39,13 +39,12 @@
       input = { kb_layout = "br"; };
 
       bind = [
-        #mouse movements    
-        "$mod, ENTER, exec, kitty"
-
+        "$mod, F, exec, firefox"
+        "$mod, Q, exec, kitty"
+        ", Print, exec, grimblast copy area"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-        # do I need 10 workspaces? Probably not, but it gives me more power which I like.
         builtins.concatLists (builtins.genList (x:
           let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
