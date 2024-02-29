@@ -9,7 +9,8 @@ with lib; {
     # Configure console keymap
     console.keyMap = "br-abnt2";
 
-    desktop.gnome.enable = true;
+    desktop.hyprland.enable = true;
+    desktop.hyprland.modKey = "SUPER";
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
