@@ -4,7 +4,7 @@
   options = with lib; {
     desktop.gnome.enable = mkOption {
       type = types.bool;
-      default = true;
+      default = false;
       description = ''
         wheter or not to use gnome as the desktop enviroment
       '';

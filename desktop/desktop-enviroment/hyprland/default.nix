@@ -1,4 +1,6 @@
 { lib, config, pkgs, home-manager, ... }: {
+  imports = [ ./greetd.nix ];
+
   options = with lib; {
     desktop.hyprland = {
       enable = mkOption {
@@ -20,10 +22,6 @@
   };
 
   config = lib.mkIf config.desktop.hyprland.enable {
-    # I need to find a better displaymanager for this, 
-    # I don't want any gnome when I have hyprland active
-    services.xserver.displayManager.gdm.enable = true;
-
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;

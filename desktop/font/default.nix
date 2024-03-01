@@ -27,7 +27,7 @@
     };
   };
 
-  config = lib.mkIf config.desktop.nerdfont.enable {
+  config = lib.mkIf config.desktop.nerdfont.enable rec {
     fonts = {
       packages = with pkgs;
         [
