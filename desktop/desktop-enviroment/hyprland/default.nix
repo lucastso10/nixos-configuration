@@ -1,5 +1,5 @@
 { lib, config, pkgs, home-manager, ... }: {
-  imports = [ ./greetd.nix ];
+  imports = [ ./greetd.nix ./rofi.nix ];
 
   options = with lib; {
     desktop.hyprland = {
@@ -41,7 +41,8 @@
       bind = [
         "$mod, F, exec, firefox"
         "$mod, RETURN, exec, kitty"
-        "$mod, Q, killactive"
+        "$mod, Q, killactive,"
+        "$mod, E, exec, rofi -show run"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
