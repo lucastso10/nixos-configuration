@@ -7,7 +7,7 @@
     # Configure console keymap
     console.keyMap = "br-abnt2";
 
-    desktop.hyprland.enable = true;
+    desktop.gnome.enable = true;
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
