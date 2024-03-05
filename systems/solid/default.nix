@@ -13,6 +13,7 @@
     apps.firefox.enable = true;
     apps.kitty.enable = true;
     apps.roblox.enable = false;
+    apps.virt-manager.enable = true;
 
     networking.firewall.enable = false;
   };
