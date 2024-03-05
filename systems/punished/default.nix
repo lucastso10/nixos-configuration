@@ -10,7 +10,6 @@ with lib; {
     console.keyMap = "br-abnt2";
 
     desktop.hyprland.enable = true;
-    desktop.hyprland.modKey = "SUPER";
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
