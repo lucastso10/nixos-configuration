@@ -37,6 +37,13 @@
           };
           modules = directories;
         };
+        solidus = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            hostname = "solidus";
+          };
+          modules = directories;
+        };
       };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
