@@ -18,6 +18,14 @@
           alters the mod key used in hyprland
         '';
       };
+
+      monitors = mkOption {
+        type = types.str;
+        default = "";
+        description = ''
+          monitor config for this machine
+        '';
+      };
     };
   };
 
