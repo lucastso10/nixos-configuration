@@ -21,7 +21,10 @@
 
       monitors = mkOption {
         type = types.str;
-        default = "";
+        default = ''
+          monitor=HDMI-A-1, 2560x1080@60, 0x0, 1
+          monitor=DP-3, 1920x1080@60, -1920x0, 1
+        '';
         description = ''
           monitor config for this machine
         '';
@@ -33,6 +36,9 @@
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
+
+    home-manager.users."bolofofo".wayland.windowManager.hyprland.extraConfig =
+      config.desktop.hyprland.monitors;
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;

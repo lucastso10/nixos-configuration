@@ -3,13 +3,7 @@
 {
   options = with lib; {
     apps.kitty = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = ''
-          wheter or not to enable the kitty terminal emulator
-        '';
-      };
+      enable = mkEnableOption "kitty";
     };
   };
 

@@ -1,13 +1,7 @@
 { lib, config, pkgs, ... }: {
   options = with lib; {
     desktop.nerdfont = {
-      enable = mkOption {
-        type = types.bool;
-        default = true;
-        description = ''
-          wheter or not to enable nerdfonts on the system
-        '';
-      };
+      enable = mkEnableOption "nerdfont";
 
       font = mkOption {
         type = types.str;

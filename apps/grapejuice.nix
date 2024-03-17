@@ -3,13 +3,7 @@
 # TODO: this still doesn't work!
 {
   options = with lib; {
-    apps.roblox.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = ''
-        wheter or not to install roblox on the system
-      '';
-    };
+    apps.roblox.enable = mkEnableOption "roblox";
   };
 
   config = lib.mkIf config.apps.roblox.enable {

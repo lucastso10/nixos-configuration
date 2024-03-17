@@ -1,15 +1,7 @@
 { lib, config, pkgs, outputs, ... }:
 
 {
-  options = with lib; {
-    desktop.gnome.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = ''
-        wheter or not to use gnome as the desktop enviroment
-      '';
-    };
-  };
+  options = with lib; { desktop.gnome.enable = mkEnableOption "Gnome"; };
 
   config = lib.mkIf config.desktop.gnome.enable {
     # Enable the X11 windowing system.

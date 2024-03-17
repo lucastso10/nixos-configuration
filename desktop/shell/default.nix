@@ -1,13 +1,7 @@
 { lib, config, pkgs, home-manager, ... }: {
   options = with lib; {
     desktop.shell = {
-      enable = mkOption {
-        type = types.bool;
-        default = true;
-        description = ''
-          wheter or not to enable custmo shell
-        '';
-      };
+      enable = mkEnableOption "shell";
     };
   };
 

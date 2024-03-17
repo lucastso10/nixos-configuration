@@ -6,13 +6,7 @@
 
   options = {
     apps.vim = {
-      enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = ''
-          whether or not to enable vim
-        '';
-      };
+      enable = lib.mkEnableOption "vim";
     };
   };
 

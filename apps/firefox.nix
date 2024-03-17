@@ -3,13 +3,7 @@
 {
   options = with lib; {
     apps.firefox = {
-      enable = mkOption {
-        type = types.bool;
-        default = true;
-        description = ''
-          wheter or not to enable firefox
-        '';
-      };
+      enable = mkEnableOption "firefox";
     };
   };
 
