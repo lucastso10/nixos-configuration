@@ -9,7 +9,13 @@ with lib; {
     # Configure console keymap
     console.keyMap = "br-abnt2";
 
+    desktop.shell.enable = true;
+    desktop.nerdfont.enable = true;
     desktop.hyprland.enable = true;
+    desktop.hyprland.extraArgs = ''
+      monitor=HDMI-A-1, 2560x1080@60, 0x0, 1
+      monitor=DP-3, 1920x1080@60, -1920x0, 1
+    '';
 
     apps.vim.enable = true;
     apps.firefox.enable = true;

@@ -4,11 +4,7 @@
 {
   imports = [ inputs.nixvim.nixosModules.nixvim ];
 
-  options = {
-    apps.vim = {
-      enable = lib.mkEnableOption "vim";
-    };
-  };
+  options = { apps.vim = { enable = lib.mkEnableOption "vim"; }; };
 
   config = lib.mkIf config.apps.vim.enable {
     programs.nixvim = {

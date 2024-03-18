@@ -1,9 +1,5 @@
 { lib, config, pkgs, home-manager, ... }: {
-  options = with lib; {
-    desktop.shell = {
-      enable = mkEnableOption "shell";
-    };
-  };
+  options = with lib; { desktop.shell = { enable = mkEnableOption "shell"; }; };
 
   config = lib.mkIf config.desktop.shell.enable {
 
