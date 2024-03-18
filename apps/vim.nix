@@ -20,7 +20,7 @@
         shiftwidth = 2;
       };
 
-      colorschemes.tokyonight.enable = true;
+      colorschemes.oxocarbon.enable = true;
 
       keymaps = [
         # nvim-tree keymaps
@@ -68,7 +68,7 @@
             digestif.enable = true; # LaTex
             nixd = {
               enable = true; # nix
-              settings.formatting.command = "${pkgs.alejandra}/bin/alejandra";
+              settings.formatting.command = "${pkgs.nixfmt}/bin/nixfmt";
             };
             pylsp.enable = true; # python
           };
