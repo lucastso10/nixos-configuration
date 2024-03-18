@@ -58,7 +58,7 @@
 
   users.users.bolofofo = {
     isNormalUser = true;
-    description = "bolofofo";
+    description = "Main user";
     extraGroups = [ "networkmanager" "wheel" "plugdev" ];
   };
 
@@ -91,13 +91,8 @@
     webcord
     youtube-music
     python3
-    grapejuice
-    git-lfs
   ];
   programs.steam.enable = true;
-
-  # TODO: Move this somewhere else
-  virtualisation.docker.enable = true;
 
   # MAYBE: openSSH could be useful
   # Enable the OpenSSH daemon.
