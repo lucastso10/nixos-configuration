@@ -3,13 +3,7 @@
 
   options = with lib; {
     desktop.hyprland = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = ''
-          wheter or not to use hyprland as the desktop enviroment
-        '';
-      };
+      enable = mkEnableOption "hyprland";
 
       modKey = mkOption {
         type = types.str;
