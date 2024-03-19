@@ -20,7 +20,10 @@
         shiftwidth = 2;
       };
 
-      colorschemes.oxocarbon.enable = true;
+      colorschemes.base16 = {
+        enable = true;
+        colorscheme = "monokai";
+      };
 
       keymaps = [
         # nvim-tree keymaps
@@ -124,7 +127,7 @@
         airline = {
           enable = true;
           # powerline = true;
-          theme = "solarized";
+          # theme = "solarized";
         };
 
         # color to hex values
