@@ -20,10 +20,7 @@
         shiftwidth = 2;
       };
 
-      colorschemes.base16 = {
-        enable = true;
-        colorscheme = "monokai";
-      };
+      colorschemes.oxocarbon.enable = true;
 
       keymaps = [
         # nvim-tree keymaps
