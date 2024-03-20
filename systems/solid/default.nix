@@ -7,6 +7,8 @@
     # Configure console keymap
     console.keyMap = "br-abnt2";
 
+    desktop.shell.enable = true;
+    desktop.nerdfont.enable = true;
     desktop.gnome.enable = true;
 
     apps.vim.enable = true;
