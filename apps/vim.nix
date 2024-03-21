@@ -35,7 +35,7 @@
         base0A = "#${config.colorScheme.palette.base0B}";
         base0B = "#${config.colorScheme.palette.base0A}";
         base0C = "#${config.colorScheme.palette.base0C}";
-        base0D = "#${config.colorScheme.palette.base0D}";
+        base0D = "#${config.colorScheme.palette.base0B}";
         base0E = "#${config.colorScheme.palette.base0E}";
         base0F = "#${config.colorScheme.palette.base0F}";
       };
