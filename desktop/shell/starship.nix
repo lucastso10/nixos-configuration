@@ -37,7 +37,7 @@
           };
 
           git_branch = {
-            symbol = " ";
+            symbol = "";
             style = "bg:#${config.colorScheme.palette.base0B}";
             format = "[ $symbol $branch ]($style)";
           };
