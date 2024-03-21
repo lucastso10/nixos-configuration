@@ -11,6 +11,7 @@
     desktop.nerdfont.enable = true;
     desktop.gnome.enable = true;
 
+    apps.alacritty.enable = true;
     apps.vim.enable = true;
     apps.firefox.enable = true;
     apps.kitty.enable = true;

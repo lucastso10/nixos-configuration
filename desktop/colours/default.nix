@@ -5,7 +5,7 @@
 
   config = {
     colorScheme = {
-      name = "Kabum";
+      name = "quite-not-oxocarbon-dark";
       author = "Bolofofodoidao";
       palette = {
         base00 = "#161616";

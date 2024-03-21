@@ -14,6 +14,11 @@
           name = config.desktop.nerdfont.font;
           size = config.desktop.nerdfont.size;
         };
+
+        settings = {
+          background = "#${config.colorScheme.palette.base00}";
+          foreground = "#${config.colorScheme.palette.base06}";
+        };
       };
     };
 

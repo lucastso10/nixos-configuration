@@ -9,58 +9,75 @@
       programs.starship = {
         enable = true;
         enableBashIntegration = true;
-        settings = {
-          format =
-            "[](#9A348E)[ ](bg:#9A348E)$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#06969A)$nix_shell$docker_context[](fg:#06969A bg:#33658A)[ ](fg:#33658A)";
+        settings = let
+          # this is the best way I found to do line breaks in the format
+          format_list = [
+            "[](#${config.colorScheme.palette.base0D})"
+            "[ ]"
+            "(bg:#${config.colorScheme.palette.base0D})"
+            "$username"
+            "[](bg:#${config.colorScheme.palette.base0A} fg:#${config.colorScheme.palette.base0D})"
+            "$directory"
+            "[](fg:#${config.colorScheme.palette.base0A} bg:#${config.colorScheme.palette.base0B})"
+            "$git_branch$git_status"
+            "[](fg:#${config.colorScheme.palette.base0B} bg:#${config.colorScheme.palette.base08})"
+            "$nix_shell$docker_context"
+            "[](fg:#${config.colorScheme.palette.base08} bg:#${config.colorScheme.palette.base0F})"
+            "[ ](fg:#${config.colorScheme.palette.base0F})"
+          ];
+
+          format = lib.strings.concatStrings format_list;
+        in {
+          inherit format;
 
           os = {
-            style = "bg:#9A348E";
+            style = "bg:#${config.colorScheme.palette.base0D}";
             disabled = false;
           };
 
           username = {
             show_always = true;
-            style_user = "bg:#9A348E";
-            style_root = "bg:#9A348E";
+            style_user = "bg:#${config.colorScheme.palette.base0D}";
+            style_root = "bg:#${config.colorScheme.palette.base0D}";
             format = "[$user ]($style)";
             disabled = true;
           };
 
           directory = {
-            style = "bg:#DA627D";
+            style = "bg:#${config.colorScheme.palette.base0A}";
             format = "[ $path ]($style)";
             truncation_length = 3;
             truncation_symbol = "…/";
           };
 
           git_branch = {
-            symbol = "";
-            style = "bg:#FCA17D";
+            symbol = " ";
+            style = "bg:#${config.colorScheme.palette.base0B}";
             format = "[ $symbol $branch ]($style)";
           };
 
           git_status = {
-            style = "bg:#FCA17D";
+            style = "bg:#${config.colorScheme.palette.base0B}";
             format = "[$all_status$ahead_behind ]($style)";
           };
 
           docker_context = {
             symbol = "  ";
-            style = "bg:#06969A";
+            style = "bg:#${config.colorScheme.palette.base08}";
             format = "[ $symbol $context ]($style) $path";
           };
 
           nix_shell = {
             disabled = false;
             symbol = " ";
-            style = "bg:#06969A";
+            style = "bg:#${config.colorScheme.palette.base08}";
             format = "[ $symbol$name ]($style)";
           };
 
           time = {
             disabled = true;
             time_format = "%R"; # Hour:Minute Format
-            style = "bg:#33658A";
+            style = "bg:#${config.colorScheme.palette.base0B}";
             format = "[ ♥ $time ]($style)";
           };
 
