@@ -19,9 +19,9 @@
             "$directory"
             "[](fg:#${config.colorScheme.palette.base0A} bg:#${config.colorScheme.palette.base0B})"
             "$git_branch$git_status"
-            "[](fg:#${config.colorScheme.palette.base0B} bg:#${config.colorScheme.palette.base08})"
+            "[](fg:#${config.colorScheme.palette.base0B} bg:#${config.colorScheme.palette.base0C})"
             "$nix_shell$docker_context"
-            "[](fg:#${config.colorScheme.palette.base08} bg:#${config.colorScheme.palette.base0F})"
+            "[](fg:#${config.colorScheme.palette.base0C} bg:#${config.colorScheme.palette.base0F})"
             "[ ](fg:#${config.colorScheme.palette.base0F})"
           ];
 
@@ -57,14 +57,14 @@
 
           docker_context = {
             symbol = "  ";
-            style = "bg:#${config.colorScheme.palette.base08}";
+            style = "bg:#${config.colorScheme.palette.base0C}";
             format = "[ $symbol $context ]($style) $path";
           };
 
           nix_shell = {
             disabled = false;
             symbol = " ";
-            style = "bg:#${config.colorScheme.palette.base08}";
+            style = "bg:#${config.colorScheme.palette.base0C}";
             format = "[ $symbol$name ]($style)";
           };
 

@@ -6,7 +6,7 @@
   config = {
     colorScheme = {
       name = "quite-not-oxocarbon-dark";
-      author = "Bolofofodoidao";
+      author = "shaunsingh/IBM/Bolofofodoidao";
       palette = {
         base00 = "#161616";
         base01 = "#262626";
