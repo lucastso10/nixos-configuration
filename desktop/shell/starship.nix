@@ -11,13 +11,13 @@
         settings = let
           # this is the best way I found to do line breaks in the format
           format_list = [
-            "[](#${config.colorScheme.palette.base0A})"
+            "[](#${config.colorScheme.palette.base0E})"
             "[ ]"
-            "(bg:#${config.colorScheme.palette.base0A})"
+            "(bg:#${config.colorScheme.palette.base0E})"
             "$username"
-            "[](bg:#${config.colorScheme.palette.base0C} fg:#${config.colorScheme.palette.base0A})"
+            "[](bg:#${config.colorScheme.palette.base0A} fg:#${config.colorScheme.palette.base0E})"
             "$directory"
-            "[](fg:#${config.colorScheme.palette.base0C} bg:#${config.colorScheme.palette.base0B})"
+            "[](fg:#${config.colorScheme.palette.base0A} bg:#${config.colorScheme.palette.base0B})"
             "$git_branch$git_status"
             "[](fg:#${config.colorScheme.palette.base0B} bg:#${config.colorScheme.palette.base08})"
             "$nix_shell$docker_context"
@@ -30,7 +30,7 @@
           inherit format;
 
           directory = {
-            style = "bg:#${config.colorScheme.palette.base0C}";
+            style = "bg:#${config.colorScheme.palette.base0A}";
             format = "[ $path ]($style)";
             truncation_length = 3;
             truncation_symbol = "…/";
