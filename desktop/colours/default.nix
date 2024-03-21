@@ -5,8 +5,8 @@
 
   config = {
     colorScheme = {
-      name = "quite-not-oxocarbon-dark";
-      author = "shaunsingh/IBM/Bolofofodoidao";
+      name = "oxocarbon-dark";
+      author = "shaunsingh/IBM";
       palette = {
         base00 = "#161616";
         base01 = "#262626";

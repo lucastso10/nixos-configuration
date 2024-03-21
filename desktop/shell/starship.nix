@@ -11,13 +11,13 @@
         settings = let
           # this is the best way I found to do line breaks in the format
           format_list = [
-            "[](#${config.colorScheme.palette.base0D})"
+            "[](#${config.colorScheme.palette.base0A})"
             "[ ]"
-            "(bg:#${config.colorScheme.palette.base0D})"
+            "(bg:#${config.colorScheme.palette.base0A})"
             "$username"
-            "[](bg:#${config.colorScheme.palette.base0A} fg:#${config.colorScheme.palette.base0D})"
+            "[](bg:#${config.colorScheme.palette.base0C} fg:#${config.colorScheme.palette.base0A})"
             "$directory"
-            "[](fg:#${config.colorScheme.palette.base0A} bg:#${config.colorScheme.palette.base0B})"
+            "[](fg:#${config.colorScheme.palette.base0C} bg:#${config.colorScheme.palette.base0B})"
             "$git_branch$git_status"
             "[](fg:#${config.colorScheme.palette.base0B} bg:#${config.colorScheme.palette.base08})"
             "$nix_shell$docker_context"
@@ -29,16 +29,8 @@
         in {
           inherit format;
 
-          username = {
-            show_always = true;
-            style_user = "bg:#${config.colorScheme.palette.base0D}";
-            style_root = "bg:#${config.colorScheme.palette.base0D}";
-            format = "[$user ]($style)";
-            disabled = true;
-          };
-
           directory = {
-            style = "bg:#${config.colorScheme.palette.base0A}";
+            style = "bg:#${config.colorScheme.palette.base0C}";
             format = "[ $path ]($style)";
             truncation_length = 3;
             truncation_symbol = "…/";
