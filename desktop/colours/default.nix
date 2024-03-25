@@ -3,5 +3,5 @@
 
   imports = [ inputs.nix-colors.homeManagerModules.default ];
 
-  config = { colorScheme = inputs.nix-colors.harmonic16-dark; };
+  config = { colorScheme = inputs.nix-colors.colorSchemes.harmonic16-dark; };
 }
