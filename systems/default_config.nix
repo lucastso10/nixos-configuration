@@ -38,22 +38,22 @@
   };
 
   console.colors = [
-    "002b36"
-    "dc322f"
-    "859900"
-    "b58900"
-    "268bd2"
-    "d33682"
-    "2aa198"
-    "eee8d5"
-    "002b36"
-    "cb4b16"
-    "586e75"
-    "657b83"
-    "839496"
-    "6c71c4"
-    "93a1a1"
-    "fdf6e3"
+    "${config.colorScheme.palette.base00}"
+    "${config.colorScheme.palette.base01}"
+    "${config.colorScheme.palette.base02}"
+    "${config.colorScheme.palette.base03}"
+    "${config.colorScheme.palette.base04}"
+    "${config.colorScheme.palette.base05}"
+    "${config.colorScheme.palette.base06}"
+    "${config.colorScheme.palette.base07}"
+    "${config.colorScheme.palette.base08}"
+    "${config.colorScheme.palette.base09}"
+    "${config.colorScheme.palette.base0A}"
+    "${config.colorScheme.palette.base0B}"
+    "${config.colorScheme.palette.base0C}"
+    "${config.colorScheme.palette.base0D}"
+    "${config.colorScheme.palette.base0E}"
+    "${config.colorScheme.palette.base0F}"
   ];
 
   users.users.bolofofo = {
