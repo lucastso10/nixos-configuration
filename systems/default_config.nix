@@ -16,6 +16,8 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+      # Keeps the git tree dirt warnings silent
+      warn-dirty = false;
     };
   };
 
