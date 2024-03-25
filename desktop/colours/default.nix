@@ -4,27 +4,28 @@
   imports = [ inputs.nix-colors.homeManagerModules.default ];
 
   config = {
-    colorScheme = {
-      name = "oxocarbon-dark";
-      author = "shaunsingh/IBM";
-      palette = {
-        base00 = "#161616";
-        base01 = "#262626";
-        base02 = "#393939";
-        base03 = "#525252";
-        base04 = "#dde1e6";
-        base05 = "#f2f4f8";
-        base06 = "#ffffff";
-        base07 = "#08bdba";
-        base08 = "#3ddbd9";
-        base09 = "#78a9ff";
-        base0A = "#ee5396";
-        base0B = "#33b1ff";
-        base0C = "#ff7eb6";
-        base0D = "#42be65";
-        base0E = "#be95ff";
-        base0F = "#82cfff";
-      };
-    };
+    colorScheme = inputs.nix-colors.colorSchemes.solarflare;
+    #colorScheme = {
+    #  name = "oxocarbon-dark";
+    #  author = "shaunsingh/IBM";
+    #  palette = {
+    #    base00 = "#000000";
+    #    base01 = "#404040";
+    #    base02 = "#606060";
+    #    base03 = "#808080";
+    #    base04 = "#c0c0c0";
+    #    base05 = "#d0d0d0";
+    #    base06 = "#e0e0e0";
+    #    base07 = "#ffffff";
+    #    base08 = "#ff0000";
+    #    base09 = "#ff9900";
+    #    base0A = "#ff0099";
+    #    base0B = "#33ff00";
+    #    base0C = "#00ffff";
+    #    base0D = "#0066ff";
+    #    base0E = "#cc00ff";
+    #    base0F = "#3300ff";
+    #  };
+    #};
   };
 }
