@@ -12,9 +12,9 @@
           # this is the best way I found to do line breaks in the format
           colorA = config.colorScheme.palette.base0D;
           colorB = config.colorScheme.palette.base0E;
-          colorC = config.colorScheme.palette.base08;
+          colorC = config.colorScheme.palette.base0B;
           colorD = config.colorScheme.palette.base0C;
-          colorE = config.colorScheme.palette.base0B;
+          colorE = config.colorScheme.palette.base08;
 
           format_list = [
             "[](#${colorA})"
