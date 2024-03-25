@@ -10,19 +10,25 @@
         enableBashIntegration = true;
         settings = let
           # this is the best way I found to do line breaks in the format
+          colorA = config.colorScheme.palette.base0D;
+          colorB = config.colorScheme.palette.base0E;
+          colorC = config.colorScheme.palette.base08;
+          colorD = config.colorScheme.palette.base0C;
+          colorE = config.colorScheme.palette.base0B;
+
           format_list = [
-            "[](#${config.colorScheme.palette.base0E})"
+            "[](#${colorA})"
             "[ ]"
-            "(bg:#${config.colorScheme.palette.base0E})"
+            "(bg:#${colorA})"
             "$username"
-            "[](bg:#${config.colorScheme.palette.base0A} fg:#${config.colorScheme.palette.base0E})"
+            "[](bg:#${colorB} fg:#${colorA})"
             "$directory"
-            "[](fg:#${config.colorScheme.palette.base0A} bg:#${config.colorScheme.palette.base0B})"
+            "[](fg:#${colorB} bg:#${colorC})"
             "$git_branch$git_status"
-            "[](fg:#${config.colorScheme.palette.base0B} bg:#${config.colorScheme.palette.base08})"
+            "[](fg:#${colorC} bg:#${colorD})"
             "$nix_shell$docker_context"
-            "[](fg:#${config.colorScheme.palette.base08} bg:#${config.colorScheme.palette.base0F})"
-            "[ ](fg:#${config.colorScheme.palette.base0F})"
+            "[](fg:#${colorD} bg:#${colorE})"
+            "[ ](fg:#${colorE})"
           ];
 
           format = lib.strings.concatStrings format_list;
@@ -30,7 +36,7 @@
           inherit format;
 
           directory = {
-            style = "bg:#${config.colorScheme.palette.base0A}";
+            style = "bg:#${colorB}";
             format = "[ $path ]($style)";
             truncation_length = 3;
             truncation_symbol = "…/";
@@ -38,25 +44,25 @@
 
           git_branch = {
             symbol = "";
-            style = "bg:#${config.colorScheme.palette.base0B}";
+            style = "bg:#${colorC}";
             format = "[ $symbol $branch ]($style)";
           };
 
           git_status = {
-            style = "bg:#${config.colorScheme.palette.base0B}";
+            style = "bg:#${colorC}";
             format = "[$all_status$ahead_behind ]($style)";
           };
 
           docker_context = {
             symbol = "  ";
-            style = "bg:#${config.colorScheme.palette.base08}";
+            style = "bg:#${colorD}";
             format = "[ $symbol $context ]($style) $path";
           };
 
           nix_shell = {
             disabled = false;
             symbol = " ";
-            style = "bg:#${config.colorScheme.palette.base08}";
+            style = "bg:#${colorD}";
             format = "[ $symbol$name ]($style)";
           };
 

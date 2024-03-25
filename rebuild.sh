@@ -5,7 +5,7 @@ echo "Formatting..."
 
 nix fmt
 
-git diff
+git --no-pager diff --minimal
 
 echo "NixOS Rebuilding..."
 
