@@ -43,6 +43,8 @@
 
       input = { kb_layout = "br"; };
 
+      exec-once = "waybar";
+
       bind = [
         "$mod, F, exec, firefox"
         "$mod, RETURN, exec, kitty"

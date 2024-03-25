@@ -9,14 +9,14 @@
         enable = true;
         enableBashIntegration = true;
         settings = let
-          # this is the best way I found to do line breaks in the format
           colorA = config.colorScheme.palette.base0D;
           colorB = config.colorScheme.palette.base0E;
           colorC = config.colorScheme.palette.base0B;
           colorD = config.colorScheme.palette.base0C;
           colorE = config.colorScheme.palette.base08;
 
-          format_list = [
+          # this is the best way I found to do line breaks in the format
+          format = lib.strings.concatStrings [
             "[](#${colorA})"
             "[ ]"
             "(bg:#${colorA})"
@@ -31,7 +31,6 @@
             "[ ](fg:#${colorE})"
           ];
 
-          format = lib.strings.concatStrings format_list;
         in {
           inherit format;
 
