@@ -43,7 +43,7 @@
 
       input = { kb_layout = "br"; };
 
-      exec-once = "waybar";
+      exec-once = "${pkgs.waybar}/bin/waybar";
 
       bind = [
         "$mod, F, exec, firefox"
