@@ -1,5 +1,5 @@
 { lib, config, pkgs, home-manager, ... }: {
-  imports = [ ./greetd.nix ./rofi.nix ];
+  imports = [ ./greetd.nix ./rofi.nix ./waybar.nix ];
 
   options = with lib; {
     desktop.hyprland = {

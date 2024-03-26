@@ -24,9 +24,7 @@
             "custom/hyprbindings"
             "custom/exit"
             "idle_inhibitor"
-            "custom/themeselector"
             "custom/notification"
-            "battery"
             "clock"
             "tray"
           ];
