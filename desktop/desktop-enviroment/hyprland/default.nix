@@ -13,11 +13,13 @@
         '';
       };
 
-      extraArgs = mkOption {
-        type = types.str;
-        default = "";
+      monitors = mkOption {
+        type = types.listOf types.str;
+        default = [ ];
         description = ''
-          extra arguments for hyprland
+          monitor configuration for setup
+          (monitor,resolution@hertz,position,scale
+          example: HDMI-A-1, 2560x1080@60, 0x0, 1)
         '';
       };
     };
@@ -27,9 +29,6 @@
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
-
-    home-manager.users."bolofofo".wayland.windowManager.hyprland.extraConfig =
-      config.desktop.hyprland.extraArgs;
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
@@ -42,6 +41,8 @@
       };
 
       input = { kb_layout = "br"; };
+
+      monitor = config.desktop.hyprland.monitors;
 
       exec-once = "${pkgs.waybar}/bin/waybar";
 
