@@ -44,8 +44,6 @@
 
       monitor = config.desktop.hyprland.monitors;
 
-      exec-once = "${pkgs.waybar}/bin/waybar";
-
       bind = [
         "$mod, F, exec, firefox"
         "$mod, RETURN, exec, kitty"
