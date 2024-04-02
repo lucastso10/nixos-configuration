@@ -10,9 +10,8 @@
         mainBar = {
           layer = "top";
           position = "top";
-          heigth = 30;
+          margin-top = 5;
 
-          modules-center = [ "hyprland/workspaces" ];
           modules-left = [
             "custom/startmenu"
             "hyprland/window"
@@ -20,6 +19,7 @@
             "cpu"
             "memory"
           ];
+          modules-center = [ "hyprland/workspaces" ];
           modules-right = [
             "custom/hyprbindings"
             "custom/exit"
