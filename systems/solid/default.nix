@@ -9,7 +9,7 @@
 
     desktop.shell.enable = true;
     desktop.nerdfont.enable = true;
-    desktop.hyprland.enable = true;
+    desktop.gnome.enable = true;
 
     apps.alacritty.enable = true;
     apps.vim.enable = true;
