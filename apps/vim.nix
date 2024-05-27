@@ -93,7 +93,11 @@
               settings.formatting.command = "${pkgs.nixfmt}/bin/nixfmt";
             };
             pylsp.enable = true; # python
-            rust-analyzer.enable = true; # Rust
+            rust-analyzer = {
+              enable = true; # Rust
+              installCargo = false;
+              installRustc = false;
+            };
           };
         };
         cmp-treesitter.enable = true;

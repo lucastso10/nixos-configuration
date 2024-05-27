@@ -89,9 +89,7 @@
   environment.systemPackages = with pkgs; [
     wget
     libreoffice
-    onlyoffice-bin
     webcord
-    youtube-music
     python3
   ];
   programs.steam.enable = true;
