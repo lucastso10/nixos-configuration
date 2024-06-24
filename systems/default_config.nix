@@ -86,12 +86,7 @@
   };
 
   # TODO: every one of these needs to go in apps
-  environment.systemPackages = with pkgs; [
-    wget
-    libreoffice
-    webcord
-    python3
-  ];
+  environment.systemPackages = with pkgs; [ wget libreoffice webcord python3 ];
   programs.steam.enable = true;
 
   # MAYBE: openSSH could be useful
