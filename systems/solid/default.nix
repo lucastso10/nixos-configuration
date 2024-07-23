@@ -17,6 +17,7 @@
     apps.kitty.enable = true;
     apps.roblox.enable = false;
     apps.virt-manager.enable = true;
+    apps.ssh.enable = true;
 
     networking.firewall.enable = false;
   };
