@@ -1,5 +1,4 @@
 { pkgs, lib, config, ... }:
-# I'm not proud of this
 # TODO: this still doesn't work!
 {
   options = with lib; { apps.ssh.enable = mkEnableOption "ssh"; };
