@@ -10,5 +10,6 @@
     ./git.nix
     ./grapejuice.nix
     ./virt-manager.nix
+    ./ssh.nix
   ];
 }

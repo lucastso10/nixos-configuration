@@ -11,8 +11,7 @@
       settings.KbdInteractiveAuthentication = false;
     };
 
-    users.users."bolofofo".openssh.authorizedKeys.keys = [
-      ~/.ssh/windows
-    ];
+    users.users."bolofofo".openssh.authorizedKeys.keys =
+      [ /home/bolofofo/.ssh/windows ];
   };
 }
