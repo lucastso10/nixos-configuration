@@ -6,6 +6,12 @@
       enable = true;
 
       font = config.desktop.nerdfont.font;
+
+      location = "top";
+
+      plugins = with pkgs; [ rofi-systemd rofi-screenshot rofimoji ];
+
+      terminal = "${pkgs.kitty}/bin/kitty";
     };
   };
 }

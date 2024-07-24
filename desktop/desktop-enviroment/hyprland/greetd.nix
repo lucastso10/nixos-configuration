@@ -3,12 +3,13 @@
   config = lib.mkIf config.desktop.hyprland.enable {
     services.greetd = {
       enable = true;
-      settings = {
-        default_session = {
+      settings = rec {
+        initial_session = {
           command =
             "${pkgs.greetd.tuigreet}/bin/tuigreet --time --asterisks --cmd Hyprland";
           user = "bolofofo";
         };
+        default_session = initial_session;
       };
     };
   };
