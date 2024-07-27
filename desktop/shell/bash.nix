@@ -9,7 +9,7 @@
   config = lib.mkIf config.desktop.shell.enable {
     environment.systemPackages = with pkgs; [ btop ];
     programs.bash = {
-      enableCompletion = true;
+      completion.enable = true;
 
       shellAliases = {
         top = "btop";

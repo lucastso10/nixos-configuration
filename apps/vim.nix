@@ -25,13 +25,13 @@
       # only true for wayland systems, may want to alter this later
       clipboard.providers.wl-copy.enable = true;
 
-      options = {
+      opts = {
         relativenumber = true;
         shiftwidth = 2;
       };
 
       colorschemes.base16.enable = true;
-      colorschemes.base16.customColorScheme = {
+      colorschemes.base16.colorscheme = {
         base00 = "#${config.colorScheme.palette.base00}";
         base01 = "#${config.colorScheme.palette.base01}";
         base02 = "#${config.colorScheme.palette.base02}";
@@ -155,7 +155,7 @@
         # tabs
         barbar = {
           enable = true;
-          autoHide = 1;
+          settings.auto_hide = 1;
           keymaps = {
             close = {
               key = "<C-q>";
