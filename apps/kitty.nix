@@ -1,7 +1,17 @@
-{ lib, config, pkgs, home-manager, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
-  options = with lib; { apps.kitty = { enable = mkEnableOption "kitty"; }; };
+  options = with lib; {
+    apps.kitty = {
+      enable = mkEnableOption "kitty";
+    };
+  };
 
   config = lib.mkIf config.apps.kitty.enable {
 

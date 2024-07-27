@@ -1,7 +1,14 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 # TODO: this still doesn't work!
 {
-  options = with lib; { apps.ssh.enable = mkEnableOption "ssh"; };
+  options = with lib; {
+    apps.ssh.enable = mkEnableOption "ssh";
+  };
 
   config = lib.mkIf config.apps.roblox.enable {
     services.openssh = {
@@ -10,7 +17,8 @@
       settings.KbdInteractiveAuthentication = false;
     };
 
-    users.users."bolofofo".openssh.authorizedKeys.keys =
-      [ /home/bolofofo/.ssh/windows ];
+    users.users."bolofofo".openssh.authorizedKeys.keys = [
+      #l/home/bolofofo/.ssh/windows 
+    ];
   };
 }

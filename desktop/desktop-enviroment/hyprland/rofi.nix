@@ -1,4 +1,11 @@
-{ lib, config, pkgs, home-manager, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  home-manager,
+  ...
+}:
+{
 
   config = lib.mkIf config.desktop.hyprland.enable {
 
@@ -9,7 +16,11 @@
 
       location = "top";
 
-      plugins = with pkgs; [ rofi-systemd rofi-screenshot rofimoji ];
+      plugins = with pkgs; [
+        rofi-systemd
+        rofi-screenshot
+        rofimoji
+      ];
 
       terminal = "${pkgs.kitty}/bin/kitty";
     };

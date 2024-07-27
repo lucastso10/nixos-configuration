@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, outputs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  outputs,
+  ...
+}:
+{
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -8,8 +16,7 @@
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
-      config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
       # Enable flakes and new 'nix' command
@@ -61,7 +68,11 @@
   users.users.bolofofo = {
     isNormalUser = true;
     description = "Main user";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "plugdev"
+    ];
   };
 
   # Enable networking
@@ -69,13 +80,16 @@
 
   # home-manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = { bolofofo = import ./home.nix; };
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
+    users = {
+      bolofofo = import ./home.nix;
+    };
   };
 
   # TODO: Toggle for ALSA when needed
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -86,7 +100,12 @@
   };
 
   # TODO: every one of these needs to go in apps
-  environment.systemPackages = with pkgs; [ wget libreoffice webcord python3 ];
+  environment.systemPackages = with pkgs; [
+    wget
+    libreoffice
+    webcord
+    python3
+  ];
   programs.steam.enable = true;
 
   # MAYBE: openSSH could be useful

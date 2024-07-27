@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   options = with lib; {
     desktop.nerdfont = {
       enable = mkEnableOption "nerdfont";
@@ -23,16 +29,21 @@
 
   config = lib.mkIf config.desktop.nerdfont.enable rec {
     fonts = {
-      packages = with pkgs;
-        [
-          (nerdfonts.override {
-            fonts = [ config.desktop.nerdfont.font "NerdFontsSymbolsOnly" ];
-          })
-        ];
+      packages = with pkgs; [
+        (nerdfonts.override {
+          fonts = [
+            config.desktop.nerdfont.font
+            "NerdFontsSymbolsOnly"
+          ];
+        })
+      ];
 
       fontconfig = {
         defaultFonts = {
-          monospace = [ "NerdFontsSymbolsOnly" config.desktop.nerdfont.font ];
+          monospace = [
+            "NerdFontsSymbolsOnly"
+            config.desktop.nerdfont.font
+          ];
         };
       };
     };

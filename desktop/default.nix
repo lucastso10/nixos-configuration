@@ -1,1 +1,9 @@
-{ ... }: { imports = [ ./shell ./font ./desktop-enviroment ./colors ]; }
+{ ... }:
+{
+  imports = [
+    ./shell
+    ./font
+    ./desktop-enviroment
+    ./colors
+  ];
+}

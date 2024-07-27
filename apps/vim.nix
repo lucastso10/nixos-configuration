@@ -1,10 +1,20 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 # TODO: move neovim to seperate flake so I can use it anywhere I want
 {
   imports = [ inputs.nixvim.nixosModules.nixvim ];
 
-  options = { apps.vim = { enable = lib.mkEnableOption "vim"; }; };
+  options = {
+    apps.vim = {
+      enable = lib.mkEnableOption "vim";
+    };
+  };
 
   config = lib.mkIf config.apps.vim.enable {
     programs.nixvim = {
@@ -20,10 +30,6 @@
         shiftwidth = 2;
       };
 
-      #colorschemes.catppuccin = {
-      #  enable = true;
-      #  flavour = "mocha";
-      #};
       colorschemes.base16.enable = true;
       colorschemes.base16.customColorScheme = {
         base00 = "#${config.colorScheme.palette.base00}";
@@ -57,7 +63,7 @@
         }
         {
           mode = "n";
-          key = "<A-f>";
+          key = "<C-f>";
           action = "<cmd>:NvimTreeFindFile<cr>";
           options = {
             silent = true;
@@ -88,16 +94,14 @@
             ccls.enable = true; # C/C++
             cmake.enable = true; # cmake
             digestif.enable = true; # LaTex
-            nixd = {
-              enable = true; # nix
-              settings.formatting.command = "${pkgs.nixfmt}/bin/nixfmt";
-            };
+            nixd.enable = true; # nix
             pylsp.enable = true; # python
             rust-analyzer = {
               enable = true; # Rust
               installCargo = false;
               installRustc = false;
             };
+            html.enable = true;
           };
         };
         cmp-treesitter.enable = true;
@@ -105,29 +109,20 @@
         cmp-buffer.enable = true;
 
         cmp-nvim-ultisnips.enable = true;
-        nvim-cmp = {
+        cmp = {
           enable = true;
-          completion.keywordLength = 2;
-          snippet.expand = "ultisnips";
-          sources = [
-            {
-              name = "ultisnips";
-              priority = 3;
-            }
-            {
-              name = "nvim_lsp";
-              priority = 2;
-            }
-            {
-              name = "path";
-              priority = 1;
-            }
-          ];
-
-          mapping = {
-            "<CR>" =
-              "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
-            "<C-j>" = "cmp.mapping.select_next_item()";
+          autoEnableSources = true;
+          settings = {
+            completion.keywordLength = 2;
+            mapping = {
+              "<CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+              "<C-j>" = "cmp.mapping.select_next_item()";
+            };
+            sources = [
+              { name = "ultisnips"; }
+              { name = "nvim_lsp"; }
+              { name = "path"; }
+            ];
           };
         };
 
@@ -160,13 +155,23 @@
         # tabs
         barbar = {
           enable = true;
-          autoHide = true;
+          autoHide = 1;
           keymaps = {
-            close = "<C-q>";
-            next = "<C-.>";
-            previous = "<C-,>";
-            moveNext = "<C-A-.>";
-            movePrevious = "<C-A-,>";
+            close = {
+              key = "<C-q>";
+            };
+            next = {
+              key = "<C-.>";
+            };
+            previous = {
+              key = "<C-,>";
+            };
+            moveNext = {
+              key = "<C-A-.>";
+            };
+            movePrevious = {
+              key = "<C-A-,>";
+            };
           };
         };
 

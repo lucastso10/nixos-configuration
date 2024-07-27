@@ -1,7 +1,15 @@
-{ lib, config, pkgs, outputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  outputs,
+  ...
+}:
 
 {
-  options = with lib; { desktop.gnome.enable = mkEnableOption "Gnome"; };
+  options = with lib; {
+    desktop.gnome.enable = mkEnableOption "Gnome";
+  };
 
   config = lib.mkIf config.desktop.gnome.enable {
     # Enable the X11 windowing system.

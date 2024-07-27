@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
 
   # direnv is used to automatically enable enviroments when moving through your system
   # to automatically enter a enviroment there has to be .envrc with the commands needed
@@ -9,17 +15,19 @@
   # eval "$(direnv hook bash)"
   config = lib.mkIf config.desktop.shell.enable {
 
-    home-manager.users."bolofofo" = { pkgs, ... }: {
-      programs = {
-        direnv = {
-          enable = true;
-          enableBashIntegration = true; # see note on other shells below
-          nix-direnv.enable = true;
+    home-manager.users."bolofofo" =
+      { pkgs, ... }:
+      {
+        programs = {
+          direnv = {
+            enable = true;
+            enableBashIntegration = true; # see note on other shells below
+            nix-direnv.enable = true;
+          };
+
+          bash.enable = true; # see note on other shells below
         };
 
-        bash.enable = true; # see note on other shells below
       };
-
-    };
   };
 }

@@ -1,8 +1,16 @@
-{ config, lib, pkgs, home-manager, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
   options = with lib; {
-    apps.firefox = { enable = mkEnableOption "firefox"; };
+    apps.firefox = {
+      enable = mkEnableOption "firefox";
+    };
   };
 
   config = lib.mkIf config.apps.firefox.enable {

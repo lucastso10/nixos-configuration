@@ -16,14 +16,25 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
 
-      directories =
-        [ home-manager.nixosModules.home-manager ./systems ./apps ./desktop ];
+      directories = [
+        home-manager.nixosModules.home-manager
+        ./systems
+        ./apps
+        ./desktop
+      ];
 
-    in {
+    in
+    {
       nixosConfigurations = {
         punished = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -48,6 +59,6 @@
         };
       };
 
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
 }
