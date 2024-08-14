@@ -22,8 +22,9 @@
       viAlias = true;
       vimAlias = true;
 
-      # only true for wayland systems, may want to alter this later
       clipboard.providers.wl-copy.enable = true;
+
+      globals.mapleader = " ";
 
       opts = {
         relativenumber = true;
@@ -51,29 +52,35 @@
       };
 
       keymaps = [
+        {
+          mode = "n";
+          key = "<leader>ff";
+          action = "<cmd>:Telescope find_files<cr>";
+        }
+        {
+          mode = "n";
+          key = "<C-t>";
+          action = "<Cmd>exe v:count1 . 'ToggleTerm'<CR>";
+        }
+        {
+          mode = "t";
+          key = "<C-t>";
+          action = "<Esc><Cmd>exe v:count1 . 'ToggleTerm'<CR>";
+        }
         # nvim-tree keymaps
         {
           mode = "n";
-          key = "<C-n>";
+          key = "<leader>n";
           action = "<cmd>:NvimTreeToggle<cr>";
           options = {
             silent = true;
             desc = "Toggle Tree";
           };
         }
-        {
-          mode = "n";
-          key = "<C-f>";
-          action = "<cmd>:NvimTreeFindFile<cr>";
-          options = {
-            silent = true;
-            desc = "CurrentFile";
-          };
-        }
         # undotree keymaps
         {
           mode = "n";
-          key = "<A-F3>";
+          key = "<leader>u";
           action = "<cmd>:UndotreeToggle<cr>";
           options = {
             silent = true;
@@ -85,6 +92,7 @@
       plugins = {
         # highlighting stuff
         nix.enable = true;
+        nix-develop.enable = true;
         treesitter.enable = true;
 
         # trying to do autocomplete kind of works, but gives error sometimes
@@ -106,9 +114,7 @@
         };
         cmp-treesitter.enable = true;
         cmp-nvim-lsp.enable = true;
-        cmp-buffer.enable = true;
 
-        cmp-nvim-ultisnips.enable = true;
         cmp = {
           enable = true;
           autoEnableSources = true;
@@ -119,7 +125,7 @@
               "<C-j>" = "cmp.mapping.select_next_item()";
             };
             sources = [
-              { name = "ultisnips"; }
+              { name = "treesitter"; }
               { name = "nvim_lsp"; }
               { name = "path"; }
             ];
@@ -144,7 +150,7 @@
 
         # bottom bar
         airline = {
-          enable = true;
+          enable = false;
           # powerline = true;
           # theme = "solarized";
         };
@@ -152,36 +158,60 @@
         # color to hex values
         nvim-colorizer.enable = true;
 
-        # tabs
-        barbar = {
+        # initial screen
+        dashboard = {
           enable = true;
-          settings.auto_hide = 1;
-          keymaps = {
-            close = {
-              key = "<C-q>";
+          settings = {
+            config = {
+              footer = [ "Vim enjoyer!" ];
+              header = [
+                "            ,----------------,               ,---------, "
+                "        ,-----------------------,          ,'        ,'|"
+                "      ,'                      ,'|        ,'        ,'  |"
+                "     +-----------------------+  |      ,'        ,'    |"
+                "     |  .-----------------.  |  |     +---------+      |"
+                "     |  |                 |  |  |     | -==----'|      |"
+                "     |  |  I LOVE VIM!..  |  |  |     |         |      |"
+                "     |  |  How do I exit  |  |  |/----|`---=    |      |"
+                "     |  |  again?_        |  |  |   ,/|==== ooo |      ;"
+                "     |  |                 |  |  |  // |(((( [33]|    ,' "
+                "     |  `-----------------'  |,' .;'| |((((     |  ,,   "
+                "     +-----------------------+  ;;  | |         |,'     "
+                "        /_)______________(_/  //'   | +---------+       "
+                "   ___________________________/___  `,                  "
+                "  /  oooooooooooooooo  .o.  oooo /,   \,'-----------    "
+                " / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,'    "
+                "/_==__==========__==_ooo__ooo=_/'   /___________,'      "
+              ];
+              mru = {
+                limit = 20;
+              };
+              project = {
+                enable = true;
+                action = "NvimTreeOpen cwd=";
+              };
+              packages.enable = false;
             };
-            next = {
-              key = "<C-.>";
-            };
-            previous = {
-              key = "<C-,>";
-            };
-            moveNext = {
-              key = "<C-A-.>";
-            };
-            movePrevious = {
-              key = "<C-A-,>";
-            };
+            theme = "hyper";
           };
         };
 
-        # initial screen
-        dashboard.enable = true;
-
+        telescope.enable = true;
         # undo
         undotree = {
           enable = true;
           #AutoOpenDiff = false;
+        };
+
+        toggleterm = {
+          enable = true;
+          settings = {
+            direction = "float";
+            float_opts = {
+              border = "curved";
+              title_pos = "center";
+            };
+          };
         };
       };
     };
