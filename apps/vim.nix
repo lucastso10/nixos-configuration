@@ -163,7 +163,7 @@
           enable = true;
           settings = {
             config = {
-              footer = [ "Vim enjoyer!" ];
+              footer = [ "Powered by nixvim!" ];
               header = [
                 "            ,----------------,               ,---------, "
                 "        ,-----------------------,          ,'        ,'|"
@@ -182,6 +182,7 @@
                 "  /  oooooooooooooooo  .o.  oooo /,   \,'-----------    "
                 " / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,'    "
                 "/_==__==========__==_ooo__ooo=_/'   /___________,'      "
+                "                                                        "
               ];
               mru = {
                 limit = 20;
