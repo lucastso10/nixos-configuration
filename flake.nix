@@ -9,11 +9,9 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # nixvim for configuring neovim with nix
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
     stylix.url = "github:danth/stylix";
+
+    neovim.url = "github:lucastso10/Neovim";
   };
 
   outputs =
