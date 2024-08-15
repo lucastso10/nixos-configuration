@@ -171,7 +171,7 @@
           enable = true;
           settings = {
             config = {
-              footer = [ "What will we do today?" ];
+              footer = [ "Powered by nixvim!" ];
               header = [
                 "            ,----------------,               ,---------, "
                 "        ,-----------------------,          ,'        ,'|"
@@ -190,6 +190,7 @@
                 "  /  oooooooooooooooo  .o.  oooo /,   \,'-----------    "
                 " / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,'    "
                 "/_==__==========__==_ooo__ooo=_/'   /___________,'      "
+                "                                                        "
               ];
               mru = {
                 limit = 20;
