@@ -13,7 +13,7 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-colors.url = "github:misterio77/nix-colors";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -26,8 +26,9 @@
     let
       inherit (self) outputs;
 
-      directories = [
+      modules_paths = [
         home-manager.nixosModules.home-manager
+        inputs.stylix.nixosModules.stylix
         ./systems
         ./apps
         ./desktop
@@ -41,21 +42,21 @@
             inherit inputs outputs;
             hostname = "punished";
           };
-          modules = directories;
+          modules = modules_paths;
         };
         solid = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
             hostname = "solid";
           };
-          modules = directories;
+          modules = modules_paths;
         };
         solidus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
             hostname = "solidus";
           };
-          modules = directories;
+          modules = modules_paths;
         };
       };
 

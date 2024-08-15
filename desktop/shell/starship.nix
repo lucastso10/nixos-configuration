@@ -19,11 +19,11 @@
           enableBashIntegration = true;
           settings =
             let
-              colorA = config.colorScheme.palette.base0D;
-              colorB = config.colorScheme.palette.base0E;
-              colorC = config.colorScheme.palette.base0B;
-              colorD = config.colorScheme.palette.base0C;
-              colorE = config.colorScheme.palette.base08;
+              colorA = config.stylix.base16Scheme.base0D;
+              colorB = config.stylix.base16Scheme.base0E;
+              colorC = config.stylix.base16Scheme.base0B;
+              colorD = config.stylix.base16Scheme.base0C;
+              colorE = config.stylix.base16Scheme.base08;
 
               # this is the best way I found to do line breaks in the format
               format = lib.strings.concatStrings [

@@ -47,22 +47,22 @@
   };
 
   console.colors = [
-    "${config.colorScheme.palette.base00}"
-    "${config.colorScheme.palette.base01}"
-    "${config.colorScheme.palette.base02}"
-    "${config.colorScheme.palette.base03}"
-    "${config.colorScheme.palette.base04}"
-    "${config.colorScheme.palette.base05}"
-    "${config.colorScheme.palette.base06}"
-    "${config.colorScheme.palette.base07}"
-    "${config.colorScheme.palette.base08}"
-    "${config.colorScheme.palette.base09}"
-    "${config.colorScheme.palette.base0A}"
-    "${config.colorScheme.palette.base0B}"
-    "${config.colorScheme.palette.base0C}"
-    "${config.colorScheme.palette.base0D}"
-    "${config.colorScheme.palette.base0E}"
-    "${config.colorScheme.palette.base0F}"
+    "${config.stylix.base16Scheme.base00}"
+    "${config.stylix.base16Scheme.base01}"
+    "${config.stylix.base16Scheme.base02}"
+    "${config.stylix.base16Scheme.base03}"
+    "${config.stylix.base16Scheme.base04}"
+    "${config.stylix.base16Scheme.base05}"
+    "${config.stylix.base16Scheme.base06}"
+    "${config.stylix.base16Scheme.base07}"
+    "${config.stylix.base16Scheme.base08}"
+    "${config.stylix.base16Scheme.base09}"
+    "${config.stylix.base16Scheme.base0A}"
+    "${config.stylix.base16Scheme.base0B}"
+    "${config.stylix.base16Scheme.base0C}"
+    "${config.stylix.base16Scheme.base0D}"
+    "${config.stylix.base16Scheme.base0E}"
+    "${config.stylix.base16Scheme.base0F}"
   ];
 
   users.users.bolofofo = {

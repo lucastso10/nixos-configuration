@@ -18,16 +18,13 @@
     home-manager.users."bolofofo" = {
       programs.kitty = {
         enable = true;
-        theme = "Alucard";
+        #theme = "Alucard";
 
-        font = lib.mkIf config.desktop.nerdfont.enable {
-          name = config.desktop.nerdfont.font;
-          size = config.desktop.nerdfont.size;
-        };
+        font.size = lib.mkForce 13;
 
         settings = {
-          background = "#${config.colorScheme.palette.base00}";
-          foreground = "#${config.colorScheme.palette.base06}";
+          #background = "#${config.colorScheme.palette.base00}";
+          #foreground = "#${config.colorScheme.palette.base06}";
         };
       };
     };

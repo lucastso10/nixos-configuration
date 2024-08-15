@@ -31,25 +31,25 @@
         shiftwidth = 2;
       };
 
-      colorschemes.base16.enable = true;
-      colorschemes.base16.colorscheme = {
-        base00 = "#${config.colorScheme.palette.base00}";
-        base01 = "#${config.colorScheme.palette.base01}";
-        base02 = "#${config.colorScheme.palette.base02}";
-        base03 = "#${config.colorScheme.palette.base03}";
-        base04 = "#${config.colorScheme.palette.base04}";
-        base05 = "#${config.colorScheme.palette.base05}";
-        base06 = "#${config.colorScheme.palette.base06}";
-        base07 = "#${config.colorScheme.palette.base07}";
-        base08 = "#${config.colorScheme.palette.base08}";
-        base09 = "#${config.colorScheme.palette.base09}";
-        base0A = "#${config.colorScheme.palette.base0A}";
-        base0B = "#${config.colorScheme.palette.base0B}";
-        base0C = "#${config.colorScheme.palette.base0C}";
-        base0D = "#${config.colorScheme.palette.base0D}";
-        base0E = "#${config.colorScheme.palette.base0E}";
-        base0F = "#${config.colorScheme.palette.base0F}";
-      };
+      #colorschemes.base16.enable = true;
+      #colorschemes.base16.colorscheme = {
+      #  base00 = "#${config.colorScheme.palette.base00}";
+      #  base01 = "#${config.colorScheme.palette.base01}";
+      #  base02 = "#${config.colorScheme.palette.base02}";
+      #  base03 = "#${config.colorScheme.palette.base03}";
+      #  base04 = "#${config.colorScheme.palette.base04}";
+      #  base05 = "#${config.colorScheme.palette.base05}";
+      #  base06 = "#${config.colorScheme.palette.base06}";
+      #  base07 = "#${config.colorScheme.palette.base07}";
+      #  base08 = "#${config.colorScheme.palette.base08}";
+      #  base09 = "#${config.colorScheme.palette.base09}";
+      #  base0A = "#${config.colorScheme.palette.base0A}";
+      #  base0B = "#${config.colorScheme.palette.base0B}";
+      #  base0C = "#${config.colorScheme.palette.base0C}";
+      #  base0D = "#${config.colorScheme.palette.base0D}";
+      #  base0E = "#${config.colorScheme.palette.base0E}";
+      #  base0F = "#${config.colorScheme.palette.base0F}";
+      #};
 
       keymaps = [
         {
@@ -101,7 +101,6 @@
           servers = {
             ccls.enable = true; # C/C++
             cmake.enable = true; # cmake
-            digestif.enable = true; # LaTex
             nixd.enable = true; # nix
             pylsp.enable = true; # python
             rust-analyzer = {
@@ -112,7 +111,7 @@
             html.enable = true;
           };
         };
-        cmp-treesitter.enable = true;
+        cmp-nvim-ultisnips.enable = true;
         cmp-nvim-lsp.enable = true;
 
         cmp = {
@@ -125,7 +124,7 @@
               "<C-j>" = "cmp.mapping.select_next_item()";
             };
             sources = [
-              { name = "treesitter"; }
+              { name = "ultisnips"; }
               { name = "nvim_lsp"; }
               { name = "path"; }
             ];
@@ -133,19 +132,28 @@
         };
 
         # browse through files
-        nvim-tree = {
+        neo-tree = {
           enable = true;
-          hijackCursor = true;
+          enableGitStatus = true;
+          enableModifiedMarkers = true;
 
-          filters = {
-            dotfiles = true; # ignores files with .
-            custom = [ "^.git$" ];
+          extraOptions = {
+            filesystem = {
+              hide_dotfiles = true;
+              hide_gitignored = true;
+              always_show = [ ".gitignored" ];
+            };
+            git_status = {
+              symbols = {
+                untracked = "";
+                ignored = "";
+                unstaged = "󰄱";
+                staged = "";
+                conflict = "";
+              };
+            };
           };
 
-          git = {
-            enable = true;
-            ignore = true; # makes tree ignore files on gitignore
-          };
         };
 
         # bottom bar
@@ -163,7 +171,7 @@
           enable = true;
           settings = {
             config = {
-              footer = [ "Vim enjoyer!" ];
+              footer = [ "What will we do today?" ];
               header = [
                 "            ,----------------,               ,---------, "
                 "        ,-----------------------,          ,'        ,'|"
@@ -213,6 +221,8 @@
             };
           };
         };
+
+        neoscroll.enable = true;
       };
     };
   };

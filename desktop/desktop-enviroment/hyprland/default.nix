@@ -48,7 +48,6 @@
         # shadow stuff
         drop_shadow = true;
         shadow_offset = "5 5";
-        "col.shadow" = "rgba(00000099)";
       };
 
       input = {

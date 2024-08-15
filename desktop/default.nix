@@ -4,6 +4,6 @@
     ./shell
     ./font
     ./desktop-enviroment
-    ./colors
+    ./stylix
   ];
 }
