@@ -365,11 +365,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1723696303,
-        "narHash": "sha256-5p1kbPfK0DczfOK6n3eyHrdx4tSZNYgoKFcP2EtJikY=",
+        "lastModified": 1723838884,
+        "narHash": "sha256-IVLrSyroHkPtvfHrmVdfHqWjTkRqeHlHN3zRTSx10E0=",
         "owner": "lucastso10",
         "repo": "Neovim",
-        "rev": "c25e29775c1e7c7087b14b70189bba82079f74af",
+        "rev": "087d374cbe40d18ce0e4579861e8a16c40b8ea08",
         "type": "github"
       },
       "original": {
@@ -418,11 +418,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1723175592,
-        "narHash": "sha256-M0xJ3FbDUc4fRZ84dPGx5VvgFsOzds77KiBMW/mMTnI=",
+        "lastModified": 1723637854,
+        "narHash": "sha256-med8+5DSWa2UnOqtdICndjDAEjxr5D7zaIiK4pn0Q7c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5e0ca22929f3342b19569b21b2f3462f053e497b",
+        "rev": "c3aa7b8938b17aebd2deecf7be0636000d62a2b9",
         "type": "github"
       },
       "original": {
@@ -523,11 +523,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1722946882,
-        "narHash": "sha256-mxtnMye8gs82tdQbVC+g6v3aPOZlH150f9WyntHIkTg=",
+        "lastModified": 1723834469,
+        "narHash": "sha256-PkJTr9DWBQcR5Ru1fJpG80dtw0MLSxAZlKnhHHFAGIA=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "5853f1a8bd072f2ebabfc3de3973084353cf6f1e",
+        "rev": "6858d08ed012bc6491cc92c13142104e56badf31",
         "type": "github"
       },
       "original": {
