@@ -11,5 +11,6 @@
     ./grapejuice.nix
     ./virt-manager.nix
     ./ssh.nix
+    ./docker.nix
   ];
 }
