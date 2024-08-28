@@ -31,7 +31,7 @@ with lib;
     apps.kitty.enable = true;
     apps.roblox.enable = true;
     apps.lutris.enable = true;
-    apps.ssh.enable = false;
+    apps.ssh.enable = true;
     apps.docker.enable = true;
   };
 }
