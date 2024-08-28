@@ -10,7 +10,7 @@
     apps.ssh.enable = mkEnableOption "ssh";
   };
 
-  config = lib.mkIf config.apps.roblox.enable {
+  config = lib.mkIf config.apps.ssh.enable {
     services.openssh = {
       enable = true;
       settings.PasswordAuthentication = false;
