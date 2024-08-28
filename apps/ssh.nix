@@ -15,10 +15,12 @@
       enable = true;
       settings.PasswordAuthentication = false;
       settings.KbdInteractiveAuthentication = false;
+      openFirewall = true;
     };
 
     users.users."bolofofo".openssh.authorizedKeys.keys = [
-      #l/home/bolofofo/.ssh/windows 
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPOacDoTG1OI9w/TPtZEoRyDbZGZgQaF48GEMf5qCN/7 bolofofo@punished"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKKjrzu0E7KuvEX6qP3HGglii4dvtRFYfuqi9FoQt18F bolofofo@solid"
     ];
   };
 }
