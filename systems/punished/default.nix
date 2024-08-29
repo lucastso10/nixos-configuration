@@ -32,5 +32,7 @@ with lib;
     apps.lutris.enable = true;
     apps.ssh.enable = true;
     apps.docker.enable = true;
+
+    networking.firewall.enable = enable; # is this safe? I don't know
   };
 }
