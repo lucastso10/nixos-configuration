@@ -4,7 +4,6 @@
   config,
   ...
 }:
-# TODO: this still doesn't work!
 {
   options = with lib; {
     apps.ssh.enable = mkEnableOption "ssh";
@@ -15,7 +14,9 @@
       enable = true;
       settings.PasswordAuthentication = false;
       settings.KbdInteractiveAuthentication = false;
+      settings.PermitRootLogin = "no";
       openFirewall = true;
+      ports = [ 6969 ];
     };
 
     users.users."bolofofo".openssh.authorizedKeys.keys = [
