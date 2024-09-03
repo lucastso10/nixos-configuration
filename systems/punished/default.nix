@@ -20,11 +20,12 @@ with lib;
 
     desktop.shell.enable = true;
     desktop.nerdfont.enable = true;
-    desktop.hyprland.enable = true;
-    desktop.hyprland.monitors = [
-      "HDMI-A-1, 2560x1080@60, 0x0, 1"
-      "DP-3, 1920x1080@60, -1920x0, 1"
-    ];
+    #desktop.hyprland.enable = true;
+    #desktop.hyprland.monitors = [
+    #  "HDMI-A-1, 2560x1080@60, 0x0, 1"
+    #  "DP-3, 1920x1080@60, -1920x0, 1"
+    #];
+    desktop.kde.enable = true;
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
@@ -33,6 +34,6 @@ with lib;
     apps.ssh.enable = true;
     apps.docker.enable = true;
 
-    networking.firewall.enable = enable; # is this safe? I don't know
+    networking.firewall.enable = true;
   };
 }
