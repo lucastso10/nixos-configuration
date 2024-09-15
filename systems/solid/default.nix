@@ -26,6 +26,7 @@
     apps.kitty.enable = true;
     apps.virt-manager.enable = true;
     apps.ssh.enable = true;
+    apps.docker.enable = true;
 
     networking.firewall.enable = true;
   };
