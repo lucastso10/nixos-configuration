@@ -11,5 +11,6 @@
     ./virt-manager.nix
     ./ssh.nix
     ./docker.nix
+    ./prism.nix
   ];
 }

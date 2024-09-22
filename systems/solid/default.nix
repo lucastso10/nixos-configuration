@@ -27,6 +27,7 @@
     apps.virt-manager.enable = true;
     apps.ssh.enable = true;
     apps.docker.enable = true;
+    apps.prism.enable = true;
 
     networking.firewall.enable = true;
   };
