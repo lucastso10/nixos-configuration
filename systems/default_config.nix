@@ -105,7 +105,6 @@
     libreoffice
     webcord
     python3
-    teamspeak_client
   ];
   programs.steam.enable = true;
 
