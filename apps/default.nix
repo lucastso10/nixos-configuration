@@ -12,5 +12,6 @@
     ./ssh.nix
     ./docker.nix
     ./prism.nix
+    ./clickup.nix
   ];
 }
