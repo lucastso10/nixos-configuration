@@ -13,5 +13,6 @@
     ./docker.nix
     ./prism.nix
     ./vr.nix
+    ./clickup.nix
   ];
 }
