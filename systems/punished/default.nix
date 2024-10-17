@@ -34,7 +34,15 @@ with lib;
     apps.ssh.enable = true;
     apps.docker.enable = true;
     apps.prism.enable = true;
+    apps.virt-manager.enable = true;
+    apps.vr.enable = true;
 
-    networking.firewall.enable = true;
+    networking.firewall = {
+      enable = true;
+      allowedUDPPorts = [
+        9943
+        9944
+      ];
+    };
   };
 }

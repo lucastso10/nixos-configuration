@@ -97,6 +97,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # TODO: every one of these needs to go in apps
