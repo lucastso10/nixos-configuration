@@ -5,20 +5,20 @@
   ...
 }:
 {
-  options = with lib; {
+  options = {
     desktop.nerdfont = {
-      enable = mkEnableOption "nerdfont";
+      enable = lib.mkEnableOption "nerdfont";
 
-      font = mkOption {
-        type = types.str;
-        default = "Hack";
+      font = lib.mkOption {
+        type = lib.types.package;
+        default = pkgs.nerd-fonts.hack;
         description = ''
           the nerdfont to download
         '';
       };
 
-      size = mkOption {
-        type = types.int;
+      size = lib.mkOption {
+        type = lib.types.int;
         default = 13;
         description = ''
           use this size to any app that allows it
@@ -28,21 +28,21 @@
   };
 
   config = lib.mkIf config.desktop.nerdfont.enable {
+
+    home-manager.users."bolofofo".home.packages = [
+      pkgs.nerd-fonts.symbols-only
+    ];
     fonts = {
-      packages = with pkgs; [
-        (nerdfonts.override {
-          fonts = [
-            config.desktop.nerdfont.font
-            "NerdFontsSymbolsOnly"
-          ];
-        })
+      packages = [
+        config.desktop.nerdfont.font
       ];
 
       fontconfig = {
+        enable = true;
         defaultFonts = {
           monospace = [
-            "NerdFontsSymbolsOnly"
-            config.desktop.nerdfont.font
+            config.desktop.nerdfont.font.name
+            pkgs.nerd-fonts.symbols-only.name
           ];
         };
       };

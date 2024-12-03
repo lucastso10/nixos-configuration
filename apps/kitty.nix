@@ -20,8 +20,6 @@
         enable = true;
         #theme = "Alucard";
 
-        font.size = lib.mkForce 13;
-
         settings = {
           #background = "#${config.colorScheme.palette.base00}";
           #foreground = "#${config.colorScheme.palette.base06}";

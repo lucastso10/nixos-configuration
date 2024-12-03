@@ -3,6 +3,7 @@
   config = {
     stylix = {
       enable = true;
+      autoEnable = true;
 
       base16Scheme = {
         base00 = "1d2021"; # ----
@@ -46,9 +47,20 @@
       image = ../../wallpaper.jpg;
 
       fonts = {
+        sizes = {
+          terminal = 14;
+          applications = 13;
+          popups = 13;
+        };
+
         monospace = {
-          package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
-          name = "Hack Nerdfont Mono";
+          package = pkgs.nerd-fonts.hack;
+          name = pkgs.nerd-fonts.hack.name;
+        };
+
+        emoji = {
+          package = pkgs.noto-fonts-emoji;
+          name = pkgs.noto-fonts-emoji.name;
         };
       };
 
