@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   config = {
     stylix = {
@@ -54,8 +54,8 @@
         };
 
         monospace = {
-          package = pkgs.nerd-fonts.hack;
-          name = pkgs.nerd-fonts.hack.name;
+          package = config.desktop.nerdfont.font;
+          name = config.desktop.nerdfont.font.name;
         };
 
         emoji = {
