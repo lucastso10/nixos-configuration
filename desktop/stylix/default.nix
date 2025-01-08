@@ -44,7 +44,7 @@
       #  base0F = "82cfff";
       #};
 
-      image = ../../wallpaper.jpg;
+      image = ../../wallpaper.png;
 
       fonts = {
         sizes = {
