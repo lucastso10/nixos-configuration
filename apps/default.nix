@@ -14,5 +14,6 @@
     ./prism.nix
     ./vr.nix
     ./clickup.nix
+    ./ollama.nix
   ];
 }

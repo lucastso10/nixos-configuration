@@ -36,6 +36,7 @@ with lib;
     apps.prism.enable = true;
     apps.virt-manager.enable = true;
     apps.vr.enable = true;
+    apps.ollama.enable = true;
 
     networking.firewall = {
       enable = true;
