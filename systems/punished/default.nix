@@ -1,11 +1,7 @@
 {
-  pkgs,
-  lib,
-  config,
   ...
 }:
 
-with lib;
 {
   imports = [
     ./hardware.nix
@@ -20,12 +16,12 @@ with lib;
 
     desktop.shell.enable = true;
     desktop.nerdfont.enable = true;
-    #desktop.hyprland.enable = true;
-    #desktop.hyprland.monitors = [
-    #  "HDMI-A-1, 2560x1080@60, 0x0, 1"
-    #  "DP-3, 1920x1080@60, -1920x0, 1"
-    #];
-    desktop.kde.enable = true;
+    desktop.hyprland.enable = true;
+    desktop.hyprland.monitors = [
+      "HDMI-A-1, 1920x1080@180, 0x0, 1"
+      "DP-3, 1920x1080@60, -1920x0, 1"
+    ];
+    desktop.kde.enable = false;
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
@@ -40,10 +36,6 @@ with lib;
 
     networking.firewall = {
       enable = true;
-      allowedUDPPorts = [
-        9943
-        9944
-      ];
     };
   };
 }

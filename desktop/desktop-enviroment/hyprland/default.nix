@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  home-manager,
   ...
 }:
 {
@@ -43,12 +41,6 @@
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
-
-      decoration = {
-        # shadow stuff
-        drop_shadow = true;
-        shadow_offset = "5 5";
-      };
 
       input = {
         kb_layout = "br";

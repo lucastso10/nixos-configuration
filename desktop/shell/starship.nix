@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  home-manager,
   ...
 }:
 {
@@ -10,7 +8,7 @@
   config = lib.mkIf config.desktop.shell.enable {
 
     home-manager.users."bolofofo" =
-      { pkgs, ... }:
+      { ... }:
       {
         programs.bash.enable = true;
 

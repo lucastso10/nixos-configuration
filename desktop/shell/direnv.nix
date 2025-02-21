@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
@@ -16,7 +15,7 @@
   config = lib.mkIf config.desktop.shell.enable {
 
     home-manager.users."bolofofo" =
-      { pkgs, ... }:
+      { ... }:
       {
         programs = {
           direnv = {

@@ -12,7 +12,7 @@
       completion.enable = true;
 
       shellAliases = {
-        top = "btop";
+        top = "sudo btop";
       };
     };
   };
