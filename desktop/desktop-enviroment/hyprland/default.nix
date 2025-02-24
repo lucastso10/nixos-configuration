@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    ./greetd.nix
+    ./ly.nix
     ./rofi.nix
     ./waybar.nix
   ];
@@ -53,7 +53,7 @@
           "$mod, F, exec, firefox"
           "$mod, RETURN, exec, kitty"
           "$mod, Q, killactive,"
-          "$mod, E, exec, rofi -show run"
+          "$mod, E, exec, rofi -show run -matching fuzzy"
         ]
         ++ (
           # workspaces
@@ -72,7 +72,7 @@
                 "$mod, ${ws}, workspace, ${toString (x + 1)}"
                 "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
               ]
-            ) 5
+            ) 10
           )
         );
     };

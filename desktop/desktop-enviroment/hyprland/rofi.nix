@@ -13,7 +13,7 @@
 
       #font = config.desktop.nerdfont.font;
 
-      location = "top";
+      location = "center";
 
       plugins = with pkgs; [
         rofi-systemd
