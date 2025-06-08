@@ -64,10 +64,10 @@
         };
       };
 
-      cursor = {
-        package = pkgs.posy-cursors;
-        name = "Posy_Cursor_Black";
-      };
+      #cursor = {
+      #  package = pkgs.posy-cursors;
+      #  name = "Posy_Cursor_Black";
+      #};
 
       polarity = "dark";
     };
