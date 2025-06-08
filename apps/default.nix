@@ -15,5 +15,6 @@
     ./vr.nix
     ./clickup.nix
     ./ollama.nix
+    ./popcorntime.nix
   ];
 }
