@@ -16,8 +16,8 @@
     home-manager.users."bolofofo" = {
       programs.ghostty = {
         enable = true;
-        settings = {
-        };
+        #settings = {
+        #};
       };
     };
 

@@ -13,9 +13,10 @@
     ./docker.nix
     ./prism.nix
     ./vr.nix
-    ./clickup.nix
-    ./ollama.nix
     ./popcorntime.nix
     ./ghostty.nix
+    ./vesktop.nix
+    ./steam.nix
+    ./libreoffice.nix
   ];
 }

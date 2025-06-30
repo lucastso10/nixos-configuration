@@ -1,7 +1,4 @@
 {
-  pkgs,
-  lib,
-  config,
   ...
 }:
 {
@@ -20,7 +17,7 @@
     desktop.nerdfont.enable = true;
     desktop.gnome.enable = true;
 
-    apps.alacritty.enable = true;
+    apps.alacritty.enable = false;
     apps.vim.enable = true;
     apps.firefox.enable = true;
     apps.kitty.enable = true;
@@ -30,6 +27,8 @@
     apps.prism.enable = true;
     apps.popcorntime.enable = true;
     apps.ghostty.enable = true;
+    apps.steam.enable = true;
+    apps.vesktop.enable = true;
 
     networking.firewall.enable = true;
   };

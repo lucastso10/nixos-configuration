@@ -88,7 +88,6 @@
     };
   };
 
-  # TODO: Toggle for ALSA when needed
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -103,11 +102,8 @@
   # TODO: every one of these needs to go in apps
   environment.systemPackages = with pkgs; [
     wget
-    libreoffice
-    webcord
-    python3
+    curl
   ];
-  programs.steam.enable = true;
 
   # MAYBE: openSSH could be useful
   # Enable the OpenSSH daemon.

@@ -21,7 +21,6 @@
       "HDMI-A-1, 1920x1080@180, 0x0, 1"
       "DP-3, 1920x1080@60, -1920x0, 1"
     ];
-    desktop.kde.enable = false;
 
     apps.vim.enable = true;
     apps.firefox.enable = true;
@@ -32,10 +31,8 @@
     apps.prism.enable = true;
     apps.virt-manager.enable = true;
     apps.vr.enable = true;
-    apps.ollama.enable = true;
+    apps.steam.enable = true;
 
-    networking.firewall = {
-      enable = true;
-    };
+    networking.firewall.enable = true;
   };
 }

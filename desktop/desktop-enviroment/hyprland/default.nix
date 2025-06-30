@@ -36,7 +36,6 @@
 
   config = lib.mkIf config.desktop.hyprland.enable {
     programs.hyprland.enable = true;
-    programs.hyprland.xwayland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
@@ -51,7 +50,7 @@
       bind =
         [
           "$mod, F, exec, firefox"
-          "$mod, RETURN, exec, kitty"
+          "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive,"
           "$mod, E, exec, rofi -show run -matching fuzzy"
         ]
