@@ -29,6 +29,7 @@
     apps.docker.enable = true;
     apps.prism.enable = true;
     apps.popcorntime.enable = true;
+    apps.ghostty.enable = true;
 
     networking.firewall.enable = true;
   };

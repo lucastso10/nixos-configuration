@@ -16,5 +16,6 @@
     ./clickup.nix
     ./ollama.nix
     ./popcorntime.nix
+    ./ghostty.nix
   ];
 }
