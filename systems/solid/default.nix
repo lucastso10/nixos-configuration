@@ -15,7 +15,11 @@
 
     desktop.shell.enable = true;
     desktop.nerdfont.enable = true;
-    desktop.gnome.enable = true;
+    desktop.hyprland.enable = true;
+    desktop.hyprland.monitors = [
+      "HDMI-A-1, 1920x1080@180, 0x0, 1"
+      "DP-3, 1920x1080@60, -1920x0, 1"
+    ];
 
     apps.alacritty.enable = false;
     apps.vim.enable = true;
