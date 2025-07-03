@@ -5,7 +5,6 @@
   ...
 }:
 {
-
   config = lib.mkIf config.desktop.shell.enable {
     environment.systemPackages = with pkgs; [ btop ];
     programs.bash = {

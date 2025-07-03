@@ -3,7 +3,7 @@ pushd ~/nixos-config
 
 echo "Formatting..."
 
-nix fmt
+nix fmt .
 
 git --no-pager diff --minimal
 

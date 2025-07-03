@@ -5,7 +5,6 @@
   home-manager,
   ...
 }:
-
 {
   options = with lib; {
     apps.kitty = {
@@ -14,7 +13,6 @@
   };
 
   config = lib.mkIf config.apps.kitty.enable {
-
     home-manager.users."bolofofo" = {
       programs.kitty = {
         enable = true;
@@ -26,6 +24,5 @@
         };
       };
     };
-
   };
 }

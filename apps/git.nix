@@ -5,7 +5,6 @@
   home-manager,
   ...
 }:
-
 {
   config = {
     home-manager.users."bolofofo" = {

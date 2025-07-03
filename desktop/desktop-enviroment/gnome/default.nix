@@ -3,7 +3,6 @@
   config,
   ...
 }:
-
 {
   options = with lib; {
     desktop.gnome.enable = mkEnableOption "Gnome";

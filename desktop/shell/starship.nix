@@ -4,9 +4,7 @@
   ...
 }:
 {
-
   config = lib.mkIf config.desktop.shell.enable {
-
     home-manager.users."bolofofo" =
       { ... }:
       {
@@ -38,7 +36,6 @@
                 "[](fg:#${colorD} bg:#${colorE})"
                 "[ ](fg:#${colorE})"
               ];
-
             in
             {
               inherit format;
@@ -73,7 +70,6 @@
                 style = "bg:#${colorD}";
                 format = "[ $symbol$name ]($style)";
               };
-
             };
         };
       };

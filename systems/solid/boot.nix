@@ -4,7 +4,6 @@
   pkgs,
   ...
 }:
-
 {
   boot = {
     initrd.availableKernelModules = [

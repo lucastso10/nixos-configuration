@@ -5,7 +5,6 @@
   home-manager,
   ...
 }:
-
 {
   options = with lib; {
     apps.firefox = {
@@ -28,9 +27,8 @@
             SponsoredPocket = false;
           };
         };
-
       };
-      
+
       #stylix.targets.firefox.profileNames= [ "default" ];
     };
   };

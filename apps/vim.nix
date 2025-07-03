@@ -5,7 +5,6 @@
   inputs,
   ...
 }:
-
 # Neovim config is on a seperate flake https://github.com/lucastso10/Neovim
 {
   options = {

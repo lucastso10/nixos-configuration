@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ ... }:
 {
   home = {
     username = "bolofofo";

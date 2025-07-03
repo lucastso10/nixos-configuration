@@ -4,7 +4,6 @@
   pkgs,
   ...
 }:
-
 {
   boot = {
     initrd = {
@@ -33,7 +32,6 @@
         useOSProber = true;
         #theme = pkgs.nixos-grub2-theme;
       };
-
     };
   };
 }

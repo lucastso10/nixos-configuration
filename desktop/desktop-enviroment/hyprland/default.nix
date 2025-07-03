@@ -42,8 +42,6 @@
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
 
-      "exec-once" = "waybar";
-
       input = {
         kb_layout = "br";
       };

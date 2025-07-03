@@ -5,7 +5,6 @@
   home-manager,
   ...
 }:
-
 {
   options = with lib; {
     apps.steam = {
