@@ -153,6 +153,7 @@
            	margin-bottom: 0;
            	border-radius: 26px;
            	background: #282a36;
+                border-bottom-width: 0px;
            }
 
            #workspaces button {
@@ -161,8 +162,10 @@
            	font-size: 16px;
            }
 
-           #workspaces button.active {
-           	color: #ff79c6;
+           .modules-left #workspaces button.focused,
+           .modules-left #workspaces button.active {
+               color: #ff79c6;
+               border-bottom: 0px;
            }
 
            #workspaces button:hover {
