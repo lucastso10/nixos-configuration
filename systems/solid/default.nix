@@ -21,13 +21,13 @@
       "DP-3, 1920x1080@60, -1920x0, 1"
     ];
 
-    apps.alacritty.enable = false;
+    apps.ssh.enable = false;
+    apps.virt-manager.enable = true;
     apps.vim.enable = true;
+    apps.docker.enable = true;
+
     apps.firefox.enable = true;
     apps.kitty.enable = true;
-    apps.virt-manager.enable = true;
-    apps.ssh.enable = true;
-    apps.docker.enable = true;
     apps.prism.enable = true;
     apps.popcorntime.enable = true;
     apps.ghostty.enable = true;

@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./alacritty.nix
     ./firefox.nix
     ./vim.nix
     ./kitty.nix
