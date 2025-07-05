@@ -153,25 +153,25 @@
         	margin-bottom: 0;
         	border-radius: 26px;
         	font-size: 16px;
-        	background: #282a36;
+        	background: #${config.stylix.base16Scheme.base00};
              border-bottom-width: 0px;
         }
 
         #workspaces button {
-        	color: #f8f8f2;
+        	color: white;
         	background: transparent;
         }
 
-        #workspaces button.focused,
-        #workspaces button.active {
-            color: #ff79c6;
+        .modules-left #workspaces button.focused,
+        .modules-left #workspaces button.active {
+            color: #${config.stylix.base16Scheme.base0E};
             border-bottom: 0px;
         }
 
         #workspaces button:hover {
         	box-shadow: inherit;
         	text-shadow: inherit;
-        	color: #ff79c6;
+        	color: #${config.stylix.base16Scheme.base0E};
         }
 
         #mpd {
@@ -181,7 +181,7 @@
         	padding-right: 16px;
         	margin-bottom: 0;
         	border-radius: 26px;
-        	background: #282a36;
+        	background: #${config.stylix.base16Scheme.base00};
         	transition: none;
         	color: #4d4d4d;
         	background: #5af78e;
@@ -200,8 +200,8 @@
         	padding-right: 16px;
         	margin-bottom: 0;
         	border-radius: 26px;
-        	color: #4d4d4d;
-        	background: #bd93f9;
+        	color: #${config.stylix.base16Scheme.base01};
+        	background: #${config.stylix.base16Scheme.base0A};
         }
 
         #pulseaudio {
@@ -211,8 +211,8 @@
         	padding-right: 16px;
         	margin-bottom: 0;
         	border-radius: 26px;
-        	color: #4d4d4d;
-        	background: #9aedfe;
+        	color: #${config.stylix.base16Scheme.base01};
+        	background: #${config.stylix.base16Scheme.base0F};
         }
 
         #cpu {
@@ -223,8 +223,8 @@
         	margin-bottom: 0;
         	border-radius: 26px;
         	transition: none;
-        	color: #4d4d4d;
-        	background: #f1fa8c;
+        	color: #${config.stylix.base16Scheme.base01};
+        	background: #${config.stylix.base16Scheme.base0D};
         }
 
         #memory {
@@ -235,8 +235,8 @@
         	margin-bottom: 0;
         	border-radius: 26px;
         	transition: none;
-        	color: #4d4d4d;
-        	background: #ff6e67;
+        	color: #${config.stylix.base16Scheme.base01};
+        	background: #${config.stylix.base16Scheme.base09};
         }
 
         #clock {
@@ -248,8 +248,8 @@
         	margin-bottom: 0;
         	border-radius: 26px;
         	transition: none;
-        	color: #f8f8f2;
-        	background: #282a36;
+        	color: white;
+        	background: #${config.stylix.base16Scheme.base00};
         }
       '';
     };
