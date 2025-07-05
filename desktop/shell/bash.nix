@@ -6,7 +6,10 @@
 }:
 {
   config = lib.mkIf config.desktop.shell.enable {
-    environment.systemPackages = with pkgs; [ btop ];
+    environment.systemPackages = with pkgs; [
+      btop
+      killall
+    ];
     programs.bash = {
       completion.enable = true;
 

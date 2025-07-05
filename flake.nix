@@ -9,9 +9,13 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix.url = "github:danth/stylix";
 
     neovim.url = "github:lucastso10/Neovim";
+
   };
 
   outputs =
@@ -19,6 +23,7 @@
       self,
       nixpkgs,
       home-manager,
+      nur,
       ...
     }@inputs:
     let
@@ -27,6 +32,7 @@
       modules_paths = [
         home-manager.nixosModules.home-manager
         inputs.stylix.nixosModules.stylix
+        nur.modules.nixos.default
         ./systems
         ./apps
         ./desktop
@@ -45,13 +51,6 @@
           specialArgs = {
             inherit inputs outputs;
             hostname = "solid";
-          };
-          modules = modules_paths;
-        };
-        solidus = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-            hostname = "solidus";
           };
           modules = modules_paths;
         };
