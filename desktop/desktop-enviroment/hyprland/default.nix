@@ -17,7 +17,7 @@
 
       modKey = mkOption {
         type = types.str;
-        default = "ALT";
+        default = "SUPER";
         description = ''
           alters the mod key used in hyprland
         '';

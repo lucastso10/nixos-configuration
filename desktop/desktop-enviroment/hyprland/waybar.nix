@@ -89,16 +89,16 @@
             "calendar" = {
               "mode" = "month";
               "format" = {
-                "months" = "<span color='#ffead3'><b>{}</b></span>";
-                "days" = "<span color='#ecc6d9'><b>{}</b></span>";
-                "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
-                "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
-                "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
+                "months" = "<span color='#${config.stylix.base16Scheme.base0E}'><b>{}</b></span>";
+                "days" = "<span color='#${config.stylix.base16Scheme.base0D}'><b>{}</b></span>";
+                "weeks" = "<span color='#${config.stylix.base16Scheme.base0A}'><b>W{}</b></span>";
+                "weekdays" = "<span color='#${config.stylix.base16Scheme.base09}'><b>{}</b></span>";
+                "today" = "<span color='#${config.stylix.base16Scheme.base0F}'><b><u>{}</u></b></span>";
               };
             };
           };
           "custom/os_button" = {
-            "format" = " ";
+            "format" = "<span color='#${config.stylix.base16Scheme.base0D}'> </span>";
             "tooltip" = false;
           };
         };
