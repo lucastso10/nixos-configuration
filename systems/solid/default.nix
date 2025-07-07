@@ -23,6 +23,7 @@
     apps.virt-manager.enable = true;
     apps.vim.enable = true;
     apps.docker.enable = true;
+    apps.tmux.enable = true;
 
     apps.firefox.enable = true;
     apps.kitty.enable = true;

@@ -16,5 +16,6 @@
     ./vesktop.nix
     ./steam.nix
     ./libreoffice.nix
+    ./tmux.nix
   ];
 }
