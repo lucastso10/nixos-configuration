@@ -10,23 +10,42 @@
       autoEnable = true;
 
       base16Scheme = {
-        base00 = "1d2021"; # ----
-        base01 = "383c3e"; # ---
-        base02 = "53585b"; # --
-        base03 = "6f7579"; # -
-        base04 = "cdcdcd"; # +
-        base05 = "d5d5d5"; # ++
-        base06 = "dddddd"; # +++
-        base07 = "e5e5e5"; # ++++
-        base08 = "d72638"; # red
-        base09 = "eb8413"; # orange
-        base0A = "f19d1a"; # yellow
-        base0B = "88b92d"; # green
-        base0C = "1ba595"; # aqua/cyan
-        base0D = "1e8bac"; # blue
-        base0E = "be4264"; # purple
-        base0F = "c85e0d"; # brown
+        base00 = "263238";
+        base01 = "2E3C43";
+        base02 = "314549";
+        base03 = "546E7A";
+        base04 = "B2CCD6";
+        base05 = "EEFFFF";
+        base06 = "EEFFFF";
+        base07 = "FFFFFF";
+        base08 = "F07178";
+        base09 = "F78C6C";
+        base0A = "FFCB6B";
+        base0B = "C3E88D";
+        base0C = "89DDFF";
+        base0D = "82AAFF";
+        base0E = "C792EA";
+        base0F = "FF5370";
       };
+
+      #base16Scheme = {
+      #  base00 = "1d2021"; # ----
+      #  base01 = "383c3e"; # ---
+      #  base02 = "53585b"; # --
+      #  base03 = "6f7579"; # -
+      #  base04 = "cdcdcd"; # +
+      #  base05 = "d5d5d5"; # ++
+      #  base06 = "dddddd"; # +++
+      #  base07 = "e5e5e5"; # ++++
+      #  base08 = "d72638"; # red
+      #  base09 = "eb8413"; # orange
+      #  base0A = "f19d1a"; # yellow
+      #  base0B = "88b92d"; # green
+      #  base0C = "1ba595"; # aqua/cyan
+      #  base0D = "1e8bac"; # blue
+      #  base0E = "be4264"; # purple
+      #  base0F = "c85e0d"; # brown
+      #};
 
       # oxocarbon dark
       #base16Scheme = {

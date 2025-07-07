@@ -16,10 +16,10 @@
           settings =
             let
               colorA = config.stylix.base16Scheme.base0D;
-              colorB = config.stylix.base16Scheme.base0E;
-              colorC = config.stylix.base16Scheme.base0B;
-              colorD = config.stylix.base16Scheme.base0C;
-              colorE = config.stylix.base16Scheme.base08;
+              colorB = config.stylix.base16Scheme.base09;
+              colorC = config.stylix.base16Scheme.base0A;
+              colorD = config.stylix.base16Scheme.base0B;
+              colorE = config.stylix.base16Scheme.base0C;
 
               # this is the best way I found to do line breaks in the format
               format = lib.strings.concatStrings [
