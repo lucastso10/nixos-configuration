@@ -36,6 +36,7 @@
           };
           "pulseaudio" = {
             "tooltip" = false;
+            "on-click" = "pavucontrol";
             "scroll-step" = 5;
             "format" = "{icon} {volume}%";
             "format-muted" = "󰝟 ";
@@ -65,10 +66,12 @@
           "cpu" = {
             "tooltip" = false;
             "format" = "  {}%";
+            "on-click" = "ghostty -e sudo btop";
           };
           "memory" = {
             "tooltip" = false;
             "format" = "  {}%";
+            "on-click" = "ghostty -e sudo btop";
           };
           "hyprland/workspaces" = {
             "format" = "<sub>{icon} {windows}</sub>";
