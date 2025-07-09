@@ -9,6 +9,7 @@
     ./ly.nix
     ./rofi.nix
     ./waybar.nix
+    ./pavucontrol.nix
   ];
 
   options = with lib; {

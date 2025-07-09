@@ -31,7 +31,6 @@
     apps.popcorntime.enable = true;
     apps.ghostty.enable = true;
     apps.steam.enable = true;
-    apps.vesktop.enable = true;
 
     networking.firewall.enable = true;
   };
