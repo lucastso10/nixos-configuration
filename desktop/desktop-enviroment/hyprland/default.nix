@@ -7,7 +7,6 @@
 {
   imports = [
     ./ly.nix
-    ./rofi.nix
     ./waybar.nix
     ./pavucontrol.nix
   ];
@@ -39,6 +38,9 @@
   config = lib.mkIf config.desktop.hyprland.enable {
     programs.hyprland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
+    home-manager.users."bolofofo" = {
+      imports = [ ./rofi.nix ];
+    };
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
