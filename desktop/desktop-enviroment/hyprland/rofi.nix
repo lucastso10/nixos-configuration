@@ -18,6 +18,12 @@
 
       terminal = "${pkgs.ghostty}/bin/ghostty";
 
+      extraConfig = {
+        show-icons = true;
+        display-drun = "";
+        disable-history = false;
+      };
+
       theme =
         let
           inherit (config.lib.formats.rasi) mkLiteral;
@@ -29,12 +35,6 @@
         in
         lib.mkForce {
           # Tweaked Dracula theme
-
-          "configuration" = {
-            show-icons = true;
-            display-drun = "";
-            disable-history = false;
-          };
 
           "*" = {
             #font = "${config.desktop.nerdfont.font.name}";
