@@ -62,6 +62,7 @@
             "tooltip" = true;
             "tooltip-format-wifi" = "{essid} {ipaddr}";
             "tooltip-format-ethernet" = "{ipaddr}";
+            "on-click" = "ghostty -e nmtui";
           };
           "cpu" = {
             "tooltip" = false;
