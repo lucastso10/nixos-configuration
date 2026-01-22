@@ -29,6 +29,7 @@
     apps.virt-manager.enable = true;
     apps.vr.enable = true;
     apps.steam.enable = true;
+    apps.discord.enable = true;
 
     networking.firewall.enable = true;
   };
