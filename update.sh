@@ -1,4 +1,4 @@
 #!/bin/sh
-pushd ~/nixos-config
+pushd ~/nixos-configuration
 sudo nix flake update
 popd
