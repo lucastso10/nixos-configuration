@@ -12,6 +12,7 @@
   config = lib.mkIf config.apps.vr.enable {
     environment.systemPackages = with pkgs; [
       sidequest
+      bs-manager
     ];
 
     services.monado = {
