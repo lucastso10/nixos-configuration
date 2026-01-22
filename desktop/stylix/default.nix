@@ -82,8 +82,8 @@
         };
 
         emoji = {
-          package = pkgs.noto-fonts-emoji;
-          name = pkgs.noto-fonts-emoji.name;
+          package = pkgs.noto-fonts-color-emoji;
+          name = pkgs.noto-fonts-color-emoji.name;
         };
       };
 
