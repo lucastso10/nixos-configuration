@@ -4,8 +4,8 @@
   ...
 }:
 {
-  config = lib.mkIf config.desktop.hyprland.enable {
-    home-manager.users."bolofofo".programs.waybar = {
+  config = {
+    programs.waybar = {
       enable = true;
       systemd.enable = true;
       settings = {
@@ -111,7 +111,6 @@
         * {
         	border: none;
         	border-radius: 0;
-        	font-family: "${config.desktop.nerdfont.font.name}";
         	font-size: 14px;
         	min-height: 24px;
         }

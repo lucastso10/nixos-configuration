@@ -7,7 +7,6 @@
 {
   imports = [
     ./ly.nix
-    ./waybar.nix
     ./pavucontrol.nix
   ];
 
@@ -39,7 +38,10 @@
     programs.hyprland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
     home-manager.users."bolofofo" = {
-      imports = [ ./rofi.nix ];
+      imports = [
+        ./rofi.nix
+        ./waybar.nix
+      ];
     };
 
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
