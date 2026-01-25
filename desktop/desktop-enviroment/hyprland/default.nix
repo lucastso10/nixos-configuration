@@ -1,15 +1,9 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
-  imports = [
-    ./ly.nix
-    ./pavucontrol.nix
-  ];
-
   options = with lib; {
     desktop.hyprland = {
       enable = mkEnableOption "hyprland";
@@ -37,13 +31,6 @@
   config = lib.mkIf config.desktop.hyprland.enable {
     programs.hyprland.enable = true;
     home-manager.users."bolofofo".wayland.windowManager.hyprland.enable = true;
-    home-manager.users."bolofofo" = {
-      imports = [
-        ./rofi.nix
-        ./waybar.nix
-      ];
-    };
-
     home-manager.users."bolofofo".wayland.windowManager.hyprland.settings = {
       "$mod" = config.desktop.hyprland.modKey;
 

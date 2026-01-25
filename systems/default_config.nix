@@ -99,7 +99,6 @@
     jack.enable = true;
   };
 
-  # TODO: every one of these needs to go in apps
   environment.systemPackages = with pkgs; [
     wget
     curl

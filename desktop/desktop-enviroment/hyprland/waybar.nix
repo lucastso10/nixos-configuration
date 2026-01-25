@@ -5,7 +5,7 @@
 }:
 {
   config = {
-    programs.waybar = {
+    home-manager.users."bolofofo".programs.waybar = {
       enable = true;
       systemd.enable = true;
       settings = {

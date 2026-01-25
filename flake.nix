@@ -34,9 +34,9 @@
         inputs.stylix.nixosModules.stylix
         nur.modules.nixos.default
         ./systems
-        ./apps
-        ./desktop
-      ];
+      ]
+      ++ nixpkgs.lib.filesystem.listFilesRecursive ./apps
+      ++ nixpkgs.lib.filesystem.listFilesRecursive ./desktop;
     in
     {
       nixosConfigurations = {

@@ -4,9 +4,15 @@
   pkgs,
   ...
 }:
+let
+  mkLiteral = value: {
+    _type = "literal";
+    inherit value;
+  };
+in
 {
   config = {
-    programs.rofi = {
+    home-manager.users."bolofofo".programs.rofi = {
       enable = true;
       location = "center";
 
@@ -26,7 +32,6 @@
 
       theme =
         let
-          inherit (config.lib.formats.rasi) mkLiteral;
           foreground = mkLiteral "#${config.stylix.base16Scheme.base07}";
           background-color = mkLiteral "#${config.stylix.base16Scheme.base00}";
           active-background = mkLiteral "#${config.stylix.base16Scheme.base0E}";
