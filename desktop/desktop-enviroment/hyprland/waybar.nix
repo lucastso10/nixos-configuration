@@ -80,6 +80,7 @@
             "window-rewrite" = {
               "title<.*youtube.*>" = " ";
               "title<.*github.*>" = " ";
+              "class<.*zen.*>" = "󰺕 ";
               "class<firefox>" = " ";
               "ghostty" = "󰊠 ";
               "steam" = " ";
