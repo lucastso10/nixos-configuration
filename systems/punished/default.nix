@@ -32,6 +32,7 @@
     apps.discord.enable = true;
     apps.ghostty.enable = true;
     apps.zen-browser.enable = true;
+    apps.flatpak.enable = true;
 
     networking.firewall.enable = true;
   };
