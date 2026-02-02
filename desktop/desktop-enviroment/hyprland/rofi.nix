@@ -11,7 +11,7 @@ let
   };
 in
 {
-  config = {
+  config = lib.mkIf config.desktop.hyprland.enable {
     home-manager.users."bolofofo".programs.rofi = {
       enable = true;
       location = "center";

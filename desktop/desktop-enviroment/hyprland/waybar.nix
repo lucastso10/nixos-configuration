@@ -4,10 +4,10 @@
   ...
 }:
 {
-  config = {
+  config = lib.mkIf config.desktop.hyprland.enable {
     home-manager.users."bolofofo".programs.waybar = {
       enable = true;
-      systemd.enable = true;
+      #systemd.enable = true;
       settings = {
         mainBar = {
           "layer" = "top";
@@ -79,11 +79,11 @@
             "format-window-separator" = "";
             "window-rewrite" = {
               "title<.*youtube.*>" = " ";
+              "title<.*github.*>" = " ";
               "class<firefox>" = " ";
-              "class<firefox> title<.*github.*>" = " ";
               "ghostty" = "󰊠 ";
               "steam" = " ";
-              "vesktop" = " ";
+              "discord" = " ";
             };
           };
           "clock" = {
