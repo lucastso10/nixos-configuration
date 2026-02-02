@@ -31,6 +31,7 @@
     apps.steam.enable = true;
     apps.discord.enable = true;
     apps.ghostty.enable = true;
+    apps.zen-browser.enable = true;
 
     networking.firewall.enable = true;
   };
