@@ -50,7 +50,7 @@
         monitor = config.desktop.hyprland.monitors;
 
         bind = [
-          "$mod, F, exec, firefox"
+          "$mod, F, exec, zen"
           "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive,"
           "$mod, E, exec, rofi -show run -matching fuzzy"
