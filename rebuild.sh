@@ -1,5 +1,5 @@
 #!/bin/sh
-pushd ~/nixos-config
+pushd ~/nixos-configuration
 
 echo "Formatting..."
 
@@ -13,4 +13,4 @@ sudo nixos-rebuild switch --flake .#
 
 popd
 
-notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+#notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
