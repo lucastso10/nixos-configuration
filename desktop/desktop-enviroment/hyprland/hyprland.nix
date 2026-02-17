@@ -39,8 +39,8 @@
         "$mod" = config.desktop.hyprland.modKey;
 
         exec-once = [
-          "${pkgs.waybar}/bin/waybar"
-          "hyprpaper"
+          "systemctl --user enable --now waybar.service"
+          "systemctl --user enable --now hyprpaper.service"
         ];
 
         input = {
