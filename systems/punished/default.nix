@@ -20,19 +20,22 @@
       "DP-3, 1920x1080@180, 2560x0, 1"
     ];
 
-    apps.vim.enable = true;
-    apps.firefox.enable = true;
-    apps.lutris.enable = true;
-    apps.ssh.enable = true;
-    apps.docker.enable = true;
-    apps.prism.enable = true;
-    apps.virt-manager.enable = true;
-    apps.vr.enable = true;
-    apps.steam.enable = true;
-    apps.discord.enable = true;
-    apps.ghostty.enable = true;
-    apps.zen-browser.enable = true;
-    apps.flatpak.enable = true;
+    apps = {
+      vim.enable = true;
+      firefox.enable = true;
+      lutris.enable = true;
+      ssh.enable = true;
+      docker.enable = true;
+      prism.enable = true;
+      virt-manager.enable = true;
+      vr.enable = true;
+      steam.enable = true;
+      discord.enable = true;
+      ghostty.enable = true;
+      zen-browser.enable = true;
+      flatpak.enable = true;
+      cinny.enable = true;
+    };
 
     networking.firewall.enable = true;
   };

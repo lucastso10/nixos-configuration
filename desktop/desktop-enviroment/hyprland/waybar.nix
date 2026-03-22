@@ -15,7 +15,7 @@
             "custom/os_button"
             "hyprland/workspaces"
             "mpd"
-            "sway/mode"
+            "tray"
           ];
           "modules-center" = [ "clock" ];
           "modules-right" = [
@@ -27,8 +27,6 @@
           "mpd" = {
             "tooltip" = false;
             "format" = "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})";
-            "format-disconnected" = "ﳌ";
-            "format-stopped" = "";
             "state-icons" = {
               "playing" = "";
               "paused" = "";
@@ -73,6 +71,10 @@
             "tooltip" = false;
             "format" = "  {}%";
             "on-click" = "ghostty -e sudo btop";
+          };
+          "tray" = {
+            "spacing" = "10";
+            "icon-size" = "20";
           };
           "hyprland/workspaces" = {
             "format" = "<sub>{icon} {windows}</sub>";
@@ -254,6 +256,18 @@
         	transition: none;
         	color: white;
         	background: #${config.stylix.base16Scheme.base00};
+        }
+
+
+        #tray {
+        	margin-top: 8px;
+        	margin-left: 8px;
+        	padding-left: 16px;
+        	padding-right: 16px;
+        	margin-bottom: 0;
+        	border-radius: 26px;
+                min-width: 50px;
+                min-height: 20px;
         }
       '';
     };
