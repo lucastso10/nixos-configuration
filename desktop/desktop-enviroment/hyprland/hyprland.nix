@@ -39,8 +39,9 @@
         "$mod" = config.desktop.hyprland.modKey;
 
         exec-once = [
-          "systemctl --user enable --now waybar.service"
-          "systemctl --user enable --now hyprpaper.service"
+          #"systemctl --user enable --now waybar.service"
+          #"systemctl --user enable --now hyprpaper.service"
+          "caelestia shell -d"
         ];
 
         input = {
@@ -53,7 +54,8 @@
           "$mod, F, exec, zen"
           "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive,"
-          "$mod, E, exec, rofi -show run -matching fuzzy"
+          "$mod, E, global, caelestia:launcher"
+          #"$mod, E, exec, rofi -show run -matching fuzzy"
         ]
         ++ (
           # workspaces
