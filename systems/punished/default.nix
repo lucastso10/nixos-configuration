@@ -35,6 +35,7 @@
       zen-browser.enable = true;
       flatpak.enable = true;
       cinny.enable = true;
+      qmk.enable = true;
     };
 
     networking.firewall.enable = true;
