@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
@@ -24,6 +23,14 @@
           monitor configuration for setup
           (monitor,resolution@hertz,position,scale
           example: HDMI-A-1, 2560x1080@60, 0x0, 1)
+        '';
+      };
+
+      workspaces = mkOption {
+        type = types.listOf types.str;
+        default = [ ];
+        description = ''
+          configuration for workspaces
         '';
       };
     };
@@ -50,12 +57,13 @@
 
         monitor = config.desktop.hyprland.monitors;
 
+        workspace = config.desktop.hyprland.workspaces;
+
         bind = [
           "$mod, F, exec, zen"
           "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive,"
           "$mod, E, global, caelestia:launcher"
-          #"$mod, E, exec, rofi -show run -matching fuzzy"
         ]
         ++ (
           # workspaces

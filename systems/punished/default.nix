@@ -20,6 +20,20 @@
       "DP-3, 1920x1080@180, 2560x0, 1"
     ];
 
+    desktop.hyprland.workspaces = [
+      "1 , monitor:DP-2, default:true"
+      "2 , monitor:DP-2"
+      "3 , monitor:DP-2"
+      "4 , monitor:DP-2"
+      "4 , monitor:DP-2"
+      "5 , monitor:DP-2"
+      "6 , monitor:DP-3, default:true"
+      "7 , monitor:DP-3"
+      "8 , monitor:DP-3"
+      "9 , monitor:DP-3"
+      "10, monitor:DP-3"
+    ];
+
     apps = {
       vim.enable = true;
       firefox.enable = true;

@@ -7,7 +7,6 @@
   config = {
     stylix = {
       enable = true;
-      autoEnable = true;
 
       base16Scheme = {
         base00 = "263238";
@@ -66,8 +65,6 @@
       #  base0E = "be95ff";
       #  base0F = "82cfff";
       #};
-
-      image = ../../wallpaper.png;
 
       fonts = {
         sizes = {
