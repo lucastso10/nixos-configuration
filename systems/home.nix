@@ -1,5 +1,9 @@
-{ config, ... }:
+{ inputs, config, ... }:
 {
+  imports = [
+    inputs.caelestia-shell.homeManagerModules.default
+  ];
+
   home = {
     username = "bolofofo";
     homeDirectory = "/home/bolofofo";
