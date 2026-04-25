@@ -28,21 +28,24 @@
         general = {
           idle.timeouts = [ ];
         };
-        bar.status = {
-          showBattery = false;
-          showAudio = true;
-          showBluetooth = false;
-          showKbLayout = true;
-          showMicrophone = true;
-          showNetwork = true;
-          showWifi = false;
-          showLockStatus = false;
+        bar = {
+          clock = {
+            showDate = true;
+          };
+          status = {
+            showBattery = false;
+            showAudio = true;
+            showBluetooth = false;
+            showKbLayout = true;
+            showMicrophone = true;
+            showNetwork = true;
+            showWifi = false;
+            showLockStatus = false;
+          };
         };
       };
       cli = {
         enable = true; # Also add caelestia-cli to path
-        settings = {
-        };
       };
     };
   };
