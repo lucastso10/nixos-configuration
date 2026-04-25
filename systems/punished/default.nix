@@ -17,7 +17,7 @@
 
     desktop.hyprland.monitors = [
       "DP-2, 2560x1440@180, 0x0, 1"
-      "DP-3, 1920x1080@180, 2560x0, 1"
+      "DP-3, 1920x1080@180, 2560x360, 1"
     ];
 
     desktop.hyprland.workspaces = [
