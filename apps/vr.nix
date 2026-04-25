@@ -15,10 +15,10 @@
       bs-manager
     ];
 
-    services.monado = {
-      enable = true;
-      defaultRuntime = true; # Register as default OpenXR runtime
-    };
+    #services.monado = {
+    #  enable = true;
+    #  defaultRuntime = true; # Register as default OpenXR runtime
+    #};
 
     hardware.steam-hardware.enable = true;
   };

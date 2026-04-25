@@ -12,10 +12,10 @@
   };
 
   config = lib.mkIf config.apps.lutris.enable {
-    environment.systemPackages = with pkgs; [
-      lutris
-      wine
-      winetricks
-    ];
+    #environment.systemPackages = with pkgs; [
+    #  lutris
+    #  wine
+    #  winetricks
+    #];
   };
 }
