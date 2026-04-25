@@ -19,6 +19,15 @@
         target = "graphical-session.target";
       };
       settings = {
+        appearance = {
+          transparency = {
+            enabled = true;
+            base = 0.75;
+          };
+        };
+        general = {
+          idle.timeouts = [ ];
+        };
         bar.status = {
           showBattery = false;
           showAudio = true;
@@ -28,9 +37,6 @@
           showNetwork = true;
           showWifi = false;
           showLockStatus = false;
-        };
-        general = {
-          idle.timeouts = [ ];
         };
       };
       cli = {

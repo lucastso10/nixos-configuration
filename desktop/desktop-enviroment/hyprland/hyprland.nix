@@ -46,9 +46,7 @@
         "$mod" = config.desktop.hyprland.modKey;
 
         exec-once = [
-          #"systemctl --user enable --now waybar.service"
-          #"systemctl --user enable --now hyprpaper.service"
-          "caelestia shell -d"
+          "systemctl --user enable --now caelestia-shell.service"
         ];
 
         input = {
