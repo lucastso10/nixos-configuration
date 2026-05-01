@@ -5,7 +5,11 @@
       inputs.home-manager.nixosModules.home-manager
       inputs.stylix.nixosModules.stylix
       self.modules.nixos.punished
-      { nixpkgs.hostPlatform = { system = "x86_64-linux"; }; }
+      {
+        nixpkgs.hostPlatform = {
+          system = "x86_64-linux";
+        };
+      }
     ];
   };
 

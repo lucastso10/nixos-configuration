@@ -2,7 +2,7 @@
   ...
 }:
 {
-  flake.modules.nixos.default =
+  flake.modules.homeManager.default =
     { ... }:
     {
       programs.ghostty = {

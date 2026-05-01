@@ -1,12 +1,10 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.default =
     {
-      inputs,
       lib,
-      config,
       pkgs,
-      outputs,
+      config,
       ...
     }:
     {
@@ -50,22 +48,22 @@
       };
 
       console.colors = [
-        "${config.stylix.base16Scheme.base00}"
-        "${config.stylix.base16Scheme.base01}"
-        "${config.stylix.base16Scheme.base02}"
-        "${config.stylix.base16Scheme.base03}"
-        "${config.stylix.base16Scheme.base04}"
-        "${config.stylix.base16Scheme.base05}"
-        "${config.stylix.base16Scheme.base06}"
-        "${config.stylix.base16Scheme.base07}"
-        "${config.stylix.base16Scheme.base08}"
-        "${config.stylix.base16Scheme.base09}"
-        "${config.stylix.base16Scheme.base0A}"
-        "${config.stylix.base16Scheme.base0B}"
-        "${config.stylix.base16Scheme.base0C}"
-        "${config.stylix.base16Scheme.base0D}"
-        "${config.stylix.base16Scheme.base0E}"
-        "${config.stylix.base16Scheme.base0F}"
+        "${config.lib.stylix.colors.base00}"
+        "${config.lib.stylix.colors.base01}"
+        "${config.lib.stylix.colors.base02}"
+        "${config.lib.stylix.colors.base03}"
+        "${config.lib.stylix.colors.base04}"
+        "${config.lib.stylix.colors.base05}"
+        "${config.lib.stylix.colors.base06}"
+        "${config.lib.stylix.colors.base07}"
+        "${config.lib.stylix.colors.base08}"
+        "${config.lib.stylix.colors.base09}"
+        "${config.lib.stylix.colors.base0A}"
+        "${config.lib.stylix.colors.base0B}"
+        "${config.lib.stylix.colors.base0C}"
+        "${config.lib.stylix.colors.base0D}"
+        "${config.lib.stylix.colors.base0E}"
+        "${config.lib.stylix.colors.base0F}"
       ];
 
       users.users.bolofofo = {

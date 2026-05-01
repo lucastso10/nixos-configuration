@@ -2,7 +2,7 @@
   ...
 }:
 {
-  flake.modules.nixos.default =
+  flake.modules.nixos.flatpak =
     { ... }:
     {
       services.flatpak.enable = true;

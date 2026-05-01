@@ -42,6 +42,7 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       # Imports all flake-parts modules under `./modules`
       imports = [
+        inputs.flake-parts.flakeModules.modules
         (inputs.import-tree ./modules)
       ];
 

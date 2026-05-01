@@ -1,11 +1,7 @@
 { ... }:
 {
   flake.nixos.homeManager.default =
-    {
-      lib,
-      config,
-      ...
-    }:
+    { ... }:
     {
       # direnv is used to automatically enable enviroments when moving through your system
       # to automatically enter a enviroment there has to be .envrc with the commands needed
@@ -14,14 +10,14 @@
       # for this to work you have to make sure direnv is hooked to the shell
       # run this command to hook it:
       # eval "$(direnv hook bash)"
-        programs = {
-          direnv = {
-            enable = true;
-            enableBashIntegration = true;
-            nix-direnv.enable = true;
-          };
-
-          bash.enable = true;
+      programs = {
+        direnv = {
+          enable = true;
+          enableBashIntegration = true;
+          nix-direnv.enable = true;
         };
+
+        bash.enable = true;
       };
+    };
 }

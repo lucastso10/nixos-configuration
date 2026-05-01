@@ -1,7 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.modules.homeManager.bolofofo =
-    { inputs, config, ... }:
+    { ... }:
     {
       imports = [
         inputs.caelestia-shell.homeManagerModules.default
@@ -20,8 +20,6 @@
       gtk.gtk4.theme = null;
 
       programs.git.signing.format = null;
-
-      programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
 
       # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
       home.stateVersion = "23.05";

@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   flake.module.nixos.default =
     {
@@ -26,6 +26,26 @@
             description = ''
               use this size to any app that allows it
             '';
+          };
+        };
+      };
+
+      stylix = {
+        fonts = {
+          sizes = {
+            terminal = 14;
+            applications = 13;
+            popups = 13;
+          };
+
+          monospace = {
+            package = config.desktop.nerdfont.font;
+            name = config.desktop.nerdfont.font.name;
+          };
+
+          emoji = {
+            package = pkgs.noto-fonts-color-emoji;
+            name = pkgs.noto-fonts-color-emoji.name;
           };
         };
       };

@@ -2,7 +2,7 @@
   ...
 }:
 {
-  flake.modules.nixos.default =
+  flake.modules.nixos.docker =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
