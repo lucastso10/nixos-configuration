@@ -60,11 +60,14 @@
 
           workspace = osConfig.desktop.hyprland.workspaces;
 
+          #bindl = ", Print, exec, caelestia screenshot -r";
+
           bind = [
             "$mod, F, exec, zen"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
             "$mod, E, global, caelestia:launcher"
+            ", Print, exec, caelestia screenshot -r"
           ]
           ++ (
             # workspaces
