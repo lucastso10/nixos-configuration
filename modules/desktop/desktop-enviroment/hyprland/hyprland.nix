@@ -39,7 +39,7 @@
     };
 
   flake.modules.homeManager.hyprland =
-    { osConfig, ... }:
+    { lib, osConfig, ... }:
     {
       wayland.windowManager.hyprland = {
         enable = true;
@@ -60,7 +60,41 @@
 
           workspace = osConfig.desktop.hyprland.workspaces;
 
-          #bindl = ", Print, exec, caelestia screenshot -r";
+          general = {
+            layout = "dwindle";
+            allow_tearing = false;
+            "col.active_border" = lib.mkForce "rgba(c2c1ffe6)";
+            "col.inactive_border" = lib.mkForce "rgba(c8c5d111)";
+          };
+
+          dwindle = {
+            preserve_split = true;
+            smart_split = false;
+            smart_resizing = true;
+          };
+
+          decoration = {
+            rounding = 15;
+
+            blur = {
+              enabled = true;
+              xray = false;
+              special = false;
+              ignore_opacity = true;
+              new_optimizations = true;
+              popups = true;
+              input_methods = true;
+              size = 8;
+              passes = 2;
+            };
+
+            shadow = {
+              enabled = true;
+              range = 20;
+              render_power = 3;
+              color = lib.mkForce "rgba(353434d4)"; # $surfaced4 → $shadow hex is 000000 but $surface = 131317, surfaced4 maps to surface at d4 opacity
+            };
+          };
 
           bind = [
             "$mod, F, exec, zen"
