@@ -5,8 +5,8 @@
   flake.modules.nixos.default =
     { pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [
-        libreoffice
-      ];
+      #environment.systemPackages = with pkgs; [
+      #  libreoffice
+      #];
     };
 }
