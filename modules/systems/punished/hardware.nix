@@ -38,7 +38,12 @@
         ];
       };
 
-      swapDevices = [ ];
+      swapDevices = [
+        {
+          device = "/swapfile";
+          size = 32 * 1024; # 16GB
+        }
+      ];
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
       hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
