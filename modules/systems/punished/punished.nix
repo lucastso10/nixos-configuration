@@ -27,6 +27,7 @@
       games
       vr
       hyprland
+      flatpak
     ];
 
     networking.hostName = "punished";

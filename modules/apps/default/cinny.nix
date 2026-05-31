@@ -6,7 +6,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        cinny
+        cinny-desktop
       ];
     };
 }
