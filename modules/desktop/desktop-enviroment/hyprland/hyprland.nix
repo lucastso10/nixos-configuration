@@ -102,6 +102,7 @@
             "$mod, Q, killactive,"
             "$mod, E, global, caelestia:launcher"
             ", Print, exec, caelestia screenshot -r"
+            "$mod shift, S, exec, caelestia screenshot -r"
           ]
           ++ (
             # workspaces
