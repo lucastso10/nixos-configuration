@@ -95,6 +95,8 @@
         curl
       ];
 
+      networking.firewall.enable = true;
+
       system.autoUpgrade = {
         enable = true;
         flake = "github:lucastso10/nixos-configuration";
