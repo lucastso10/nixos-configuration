@@ -9,14 +9,15 @@
         davinci-resolve
       ];
 
-       environment.variables = {
-    RUSTICL_ENABLE = "radeonsi";
-  };
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      mesa.opencl # Enables Rusticl (OpenCL) support
-    ];
-  };
+      environment.variables = {
+        RUSTICL_ENABLE = "radeonsi";
+      };
+      hardware.graphics = {
+        enable = true;
+        extraPackages = with pkgs; [
+          mesa.opencl # Enables Rusticl (OpenCL) support
+        ];
+      };
+      hardware.amdgpu.opencl.enable = true;
     };
 }

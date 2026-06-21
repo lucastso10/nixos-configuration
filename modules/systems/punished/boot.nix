@@ -20,19 +20,21 @@
         kernelModules = [ "kvm-intel" ];
         extraModulePackages = [ ];
 
-        loader = {
-          efi = {
-            canTouchEfiVariables = true;
-          };
+        #loader = {
+        #  efi = {
+        #    canTouchEfiVariables = true;
+        #  };
 
-          grub = {
-            enable = true;
-            devices = [ "nodev" ];
-            efiSupport = true;
-            #useOSProber = true;
-            #theme = pkgs.nixos-grub2-theme;
-          };
-        };
+        #  grub = {
+        #    enable = true;
+        #    devices = [ "nodev" ];
+        #    efiSupport = true;
+        #    #useOSProber = true;
+        #    #theme = pkgs.nixos-grub2-theme;
+        #  };
+        #};
+        loader.systemd-boot.enable = true;
+        loader.efi.canTouchEfiVariables = true;
       };
     };
 }

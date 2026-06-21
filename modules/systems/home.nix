@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.homeManager.bolofofo =
-    { ... }:
+    { lib, ... }:
     {
       imports = [
         inputs.caelestia-shell.homeManagerModules.default
@@ -17,7 +17,7 @@
       # Nicely reload system units when changing configs
       systemd.user.startServices = "sd-switch";
 
-      gtk.gtk4.theme = null;
+      gtk.gtk4.theme = lib.mkForce null;
 
       programs.git.signing.format = null;
 

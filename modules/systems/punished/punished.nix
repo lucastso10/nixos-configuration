@@ -28,6 +28,9 @@
       vr
       hyprland
       flatpak
+      davinci-resolve
+      docker
+      ollama
     ];
 
     networking.hostName = "punished";
@@ -55,5 +58,6 @@
     ];
 
     networking.firewall.enable = true;
+    nixpkgs.config.rocmSupport = true;
   };
 }

@@ -2,10 +2,10 @@
   ...
 }:
 {
-  flake.modules.homeManager.default =
+  flake.modules.nixos.default =
     { ... }:
     {
-      programs.kdeconnect = { 
+      programs.kdeconnect = {
         enable = true;
       };
     };
