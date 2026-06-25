@@ -5,8 +5,8 @@
   flake.modules.nixos.vscode =
     { pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [
-        vscode
-      ];
+      programs.vscode = {
+        enable = true;
+      };
     };
 }
