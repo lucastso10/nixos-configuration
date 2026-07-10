@@ -45,6 +45,8 @@
         enable = true;
         systemd.enable = true;
 
+        #configType = "lua";
+
         settings = {
           "$mod" = osConfig.desktop.hyprland.modKey;
 

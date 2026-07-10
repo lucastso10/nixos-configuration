@@ -8,7 +8,9 @@
       ...
     }:
     {
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs = {
+        config.allowUnfree = true;
+      };
 
       nix = {
         # This will add each flake input as a registry
@@ -26,6 +28,10 @@
           auto-optimise-store = true;
           # Keeps the git tree dirt warnings silent
           warn-dirty = false;
+
+          max-jobs = 4;
+
+          cores = 6;
         };
       };
 

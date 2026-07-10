@@ -3,9 +3,6 @@
   flake.modules.homeManager.bolofofo =
     { lib, ... }:
     {
-      imports = [
-        inputs.caelestia-shell.homeManagerModules.default
-      ];
 
       home = {
         username = "bolofofo";

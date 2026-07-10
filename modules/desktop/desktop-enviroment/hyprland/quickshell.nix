@@ -1,8 +1,12 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.modules.homeManager.hyprland =
     { ... }:
     {
+      imports = [
+        inputs.caelestia-shell.homeManagerModules.default
+      ];
+
       programs.caelestia = {
         enable = true;
         systemd = {
