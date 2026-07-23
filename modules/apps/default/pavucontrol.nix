@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.nixos.hyprland =
+  flake.modules.nixos.default =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

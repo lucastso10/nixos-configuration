@@ -51,7 +51,7 @@
           "$mod" = osConfig.desktop.hyprland.modKey;
 
           exec-once = [
-            "systemctl --user enable --now caelestia-shell.service"
+            "systemctl --user enable --now noctalia.service"
           ];
 
           input = {
@@ -102,9 +102,9 @@
             "$mod, F, exec, zen"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
-            "$mod, E, global, caelestia:launcher"
-            ", Print, exec, caelestia screenshot -r"
-            "$mod shift, S, exec, caelestia screenshot -r"
+            "$mod, E, global, noctalia msg panel-open launcher"
+            ", Print, exec, noctalia msg screenshot-region"
+            "$mod shift, S, exec, noctalia msg screenshot-region"
           ]
           ++ (
             # workspaces

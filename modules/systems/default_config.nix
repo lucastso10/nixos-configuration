@@ -86,14 +86,53 @@
       networking.networkmanager.enable = true;
 
       # Enable sound with pipewire.
-      services.pulseaudio.enable = false;
       security.rtkit.enable = true;
       services.pipewire = {
         enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
+        #  alsa.enable = true;
+        #  alsa.support32Bit = true;
         pulse.enable = true;
-        jack.enable = true;
+        #  jack.enable = true;
+      };
+
+      services.pipewire.extraConfig.pipewire."99-combine-stream" = {
+        "context.modules" = [
+          {
+            name = "libpipewire-module-combine-stream";
+            args = {
+              "combine.mode" = "sink";
+              "node.name" = "combine_sink";
+              "node.description" = "My Combine Sink";
+              "combine.latency-compensate" = false;
+              "combine.props" = {
+                "audio.position" = [
+                  "FL"
+                  "FR"
+                ];
+              };
+              "stream.props" = { };
+              "stream.rules" = [
+                {
+                  matches = [
+                    {
+                      # any of the items in matches needs to match, if one does,
+                      # actions are emitted.
+                      # all keys must match the value. ! negates. ~ starts regex.
+                      #"node.name" = "~alsa_input.*";
+                      "media.class" = "Audio/Sink";
+                    }
+                  ];
+                  actions = {
+                    "create-stream" = {
+                      #"combine.audio.position" = [ "FL" "FR" ];
+                      #"audio.position" = [ "FL" "FR" ];
+                    };
+                  };
+                }
+              ];
+            };
+          }
+        ];
       };
 
       environment.systemPackages = with pkgs; [
