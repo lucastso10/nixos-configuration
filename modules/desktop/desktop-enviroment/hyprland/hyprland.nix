@@ -102,7 +102,7 @@
             "$mod, F, exec, zen"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
-            "$mod, E, global, noctalia msg panel-open launcher"
+            "$mod, E, exec, noctalia msg panel-open launcher"
             ", Print, exec, noctalia msg screenshot-region"
             "$mod shift, S, exec, noctalia msg screenshot-region"
           ]
