@@ -57,6 +57,8 @@
       "10, monitor:DP-3"
     ];
 
+    home-manager.backupCommand = "rm -f";
+
     networking.firewall.enable = true;
     nixpkgs.config.rocmSupport = true;
   };

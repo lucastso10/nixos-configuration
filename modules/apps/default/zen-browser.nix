@@ -73,11 +73,36 @@
                     IconURL = "https://noogle.dev/favicon.ico";
                     Alias = "@ng";
                   }
+                  {
+                    Name = "Home Manager Options";
+                    URLTemplate = "https://home-manager-options.extranix.com/?query={searchTerms}";
+                    IconURL = "https://wiki.nixos.org/favicon.ico";
+                    Alias = "@ho";
+                  }
                 ];
+              };
+
+              Preferences = {
+                "toolkit.legacyUserProfileCustomizations.stylesheets" = {
+                  Value = true;
+                  Status = "default";
+                };
               };
             };
           }
         )
       ];
+    };
+
+  flake.modules.homeManager.hyprland =
+    { ... }:
+    {
+      home.file.".zen/wu6gx2ek.Default\ Profile/chrome/userChrome.css".text = ''
+        @import "/home/bolofofo/.cache/noctalia/zen-browser/zen-userChrome.css";
+      '';
+
+      home.file.".zen/wu6gx2ek.Default\ Profile/chrome/userContent.css".text = ''
+        @import "/home/bolofofo/.cache/noctalia/zen-browser/zen-userContent.css";
+      '';
     };
 }

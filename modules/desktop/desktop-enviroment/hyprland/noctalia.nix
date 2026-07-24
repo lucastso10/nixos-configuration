@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.homeManager.hyprland =
-    { ... }:
+    { lib, ... }:
     {
       imports = [
         inputs.noctalia.homeModules.default
@@ -14,12 +14,51 @@
           # This may also be a string or path to a .toml file.
           theme = {
             mode = "dark";
-            source = "wallpaper";
+            source = lib.mkForce "wallpaper";
+
+            templates = {
+              builtin_ids = [
+                "ghostty"
+                "hyprland"
+                "btop"
+                "starship"
+              ];
+              community_ids = [
+                "steam"
+                "discord"
+                "zen-browser"
+                "neovim"
+              ];
+            };
           };
 
           wallpaper = {
             enabled = true;
+            automation.enabled = true;
             default.path = "/home/bolofofo/Pictures/Wallpapers";
+          };
+
+          bar = {
+            order = [ "default" ];
+            default = {
+              margin_ends = 10;
+              margin_edge = 10;
+
+              start = [
+                "clock"
+                "workspaces"
+              ];
+              center = [ "media" ];
+              end = [
+                "tray"
+                "notifications"
+                "clipboard"
+                "volume"
+                "brightness"
+                "control-center"
+                "session"
+              ];
+            };
           };
         };
       };
@@ -53,7 +92,7 @@
             path = "${pkgs.bibata-cursors}/share/icons";
           };
           keyboard = {
-            layout = "us";
+            layout = "pt";
           };
         };
       };
