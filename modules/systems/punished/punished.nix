@@ -31,6 +31,7 @@
       davinci-resolve
       docker
       ollama
+      vscode
     ];
 
     networking.hostName = "punished";
@@ -38,24 +39,29 @@
     # Configure console keymap
     console.keyMap = "br-abnt2";
 
-    desktop.hyprland.monitors = [
-      "DP-2, 2560x1440@180, 0x0, 1"
-      "DP-3, 1920x1080@180, 2560x180, 1"
-    ];
+    desktop.hyprland.monitors = ''
+      hl.monitor({ output = "DP-2", mode = "2560x1440@180", position = "0x0", scale = 1 })
+      hl.monitor({ output = "DP-3", mode = "1920x1080@180", position = "2560x180", scale = 1 })
+    '';
 
-    desktop.hyprland.workspaces = [
-      "1 , monitor:DP-2, default:true"
-      "2 , monitor:DP-2"
-      "3 , monitor:DP-2"
-      "4 , monitor:DP-2"
-      "4 , monitor:DP-2"
-      "5 , monitor:DP-2"
-      "6 , monitor:DP-3, default:true"
-      "7 , monitor:DP-3"
-      "8 , monitor:DP-3"
-      "9 , monitor:DP-3"
-      "10, monitor:DP-3"
-    ];
+    desktop.hyprland.workspaces = ''
+      local default = false
+      local monitor = "DP-2"
+      for i = 1, 10 do
+
+        if i == 1 or i == 6 then
+          default = true
+        else
+          default = false
+        end
+
+        if i >= 6 then
+          monitor = "DP-3"
+        end
+
+        hl.workspace_rule({ workspace = i, monitor = monitor, default = default})
+      end
+    '';
 
     home-manager.backupCommand = "rm -f";
 

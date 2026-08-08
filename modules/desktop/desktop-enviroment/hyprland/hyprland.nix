@@ -14,8 +14,8 @@
           };
 
           monitors = mkOption {
-            type = types.listOf types.str;
-            default = [ ];
+            type = types.str;
+            default = "";
             description = ''
               monitor configuration for setup
               (monitor,resolution@hertz,position,scale
@@ -24,8 +24,8 @@
           };
 
           workspaces = mkOption {
-            type = types.listOf types.str;
-            default = [ ];
+            type = types.str;
+            default = "";
             description = ''
               configuration for workspaces
             '';
@@ -45,88 +45,75 @@
         enable = true;
         systemd.enable = true;
 
-        #configType = "lua";
+        configType = "lua";
 
-        settings = {
-          "$mod" = osConfig.desktop.hyprland.modKey;
+        extraConfig = ''
+          hl.config({
+            input = {
+              kb_layout = "br",
+            },
+           
+            general = {
+              layout = "dwindle",
+              allow_tearing = false,
+              col = {
+                active_border = "rgba(c2c1ffe6)",
+                inactive_border = "rgba(c8c5d111)",
+              },
+            },
+           
+            dwindle = {
+              preserve_split = true,
+              smart_split = false,
+              smart_resizing = true,
+            },
+           
+            decoration = {
+              rounding = 15,
+              blur = {
+                enabled = true,
+                xray = false,
+                special = false,
+                ignore_opacity = true,
+                new_optimizations = true,
+                popups = true,
+                input_methods = true,
+                size = 8,
+                passes = 2,
+              },
+              shadow = {
+                enabled = true,
+                range = 20,
+                render_power = 3,
+                color = "rgba(353434d4)", -- $surfaced4 (surface = 131317, d4 opacity)
+              },
+            },
+          })
+           
+          ${osConfig.desktop.hyprland.monitors}
 
-          exec-once = [
-            "systemctl --user enable --now noctalia.service"
-          ];
+          ${osConfig.desktop.hyprland.workspaces}
+           
+          hl.on("hyprland.start", function()
+            hl.exec_cmd("systemctl --user enable --now noctalia.service")
+          end)
+           
+          local mod = "${osConfig.desktop.hyprland.modKey}"
+           
+          hl.bind(mod .. " + F", hl.dsp.exec_cmd("zen"))
+          hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd("ghostty"))
+          hl.bind(mod .. " + Q", hl.dsp.window.close())
+          hl.bind(mod .. " + E", hl.dsp.exec_cmd("noctalia msg panel-open launcher"))
+          hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+          hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+           
+          for i = 1, 10 do
+            local key = tostring(i % 10) -- 10 vira tecla "0"
+            hl.bind(mod .. " + " .. key, hl.dsp.focus({ workspace = tostring(i) }))
+            hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = tostring(i) }))
+          end
 
-          input = {
-            kb_layout = "br";
-          };
-
-          monitor = osConfig.desktop.hyprland.monitors;
-
-          workspace = osConfig.desktop.hyprland.workspaces;
-
-          general = {
-            layout = "dwindle";
-            allow_tearing = false;
-            "col.active_border" = lib.mkForce "rgba(c2c1ffe6)";
-            "col.inactive_border" = lib.mkForce "rgba(c8c5d111)";
-          };
-
-          dwindle = {
-            preserve_split = true;
-            smart_split = false;
-            smart_resizing = true;
-          };
-
-          decoration = {
-            rounding = 15;
-
-            blur = {
-              enabled = true;
-              xray = false;
-              special = false;
-              ignore_opacity = true;
-              new_optimizations = true;
-              popups = true;
-              input_methods = true;
-              size = 8;
-              passes = 2;
-            };
-
-            shadow = {
-              enabled = true;
-              range = 20;
-              render_power = 3;
-              color = lib.mkForce "rgba(353434d4)"; # $surfaced4 → $shadow hex is 000000 but $surface = 131317, surfaced4 maps to surface at d4 opacity
-            };
-          };
-
-          bind = [
-            "$mod, F, exec, zen"
-            "$mod, RETURN, exec, ghostty"
-            "$mod, Q, killactive,"
-            "$mod, E, exec, noctalia msg panel-open launcher"
-            ", Print, exec, noctalia msg screenshot-region"
-            "$mod shift, S, exec, noctalia msg screenshot-region"
-          ]
-          ++ (
-            # workspaces
-            # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-            builtins.concatLists (
-              builtins.genList (
-                x:
-                let
-                  ws =
-                    let
-                      c = (x + 1) / 10;
-                    in
-                    builtins.toString (x + 1 - (c * 10));
-                in
-                [
-                  "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                  "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-                ]
-              ) 10
-            )
-          );
-        };
+        '';
       };
     };
 }
