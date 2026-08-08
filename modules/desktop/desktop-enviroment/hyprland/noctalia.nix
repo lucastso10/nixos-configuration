@@ -65,7 +65,7 @@
     };
 
   flake.modules.nixos.hyprland =
-    { pkgs, ... }:
+    { ... }:
     {
       imports = [
         inputs.noctalia.nixosModules.default
@@ -86,10 +86,9 @@
         # Optional configuration
         greeter-args = "";
         settings = {
-          cursor = {
-            theme = "Bibata-Modern-Ice";
-            size = 24;
-            path = "${pkgs.bibata-cursors}/share/icons";
+          appearance = {
+            scheme = "Synced";
+            password_style = "random";
           };
           keyboard = {
             layout = "pt";
